@@ -1,0 +1,426 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://ot7sfyf64j00"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_e01iu"]
+
+[resource]
+script = ExtResource("1_e01iu")
+starts = {
+"checkpoint1": &"0_1",
+"lock_shiori": &"0_5",
+"shiori_end": &"0_4",
+"shiori_enter": &"0_3",
+"shiori_meet": &"0_2"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(80, 180),
+"start_id": "checkpoint1"
+},
+"0_2": {
+"link": &"1_6",
+"offset": Vector2(63.782, 481.69),
+"start_id": "shiori_meet"
+},
+"0_3": {
+"link": &"1_3",
+"offset": Vector2(20, 20),
+"start_id": "shiori_enter"
+},
+"0_4": {
+"link": &"1_14",
+"offset": Vector2(16.243, 876.082),
+"start_id": "shiori_end"
+},
+"0_5": {
+"link": &"1_26",
+"offset": Vector2(-97.632, -460.182),
+"start_id": "lock_shiori"
+},
+"1_1": {
+"dialogue": "Get ready, I'll be here to support you,
+Mentally...",
+"offset": Vector2(320, 160),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 3
+},
+"1_10": {
+"dialogue": "What?",
+"offset": Vector2(2373.97, 506.093),
+"options": {
+0: {
+"condition": {},
+"link": &"1_11",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 2
+},
+"1_11": {
+"dialogue": "And here I thought putting all those obstacle going to stop those guards and executioner from coming here. ",
+"offset": Vector2(2800, 540),
+"options": {
+0: {
+"condition": {},
+"link": &"1_12",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 4
+},
+"1_12": {
+"dialogue": "No, it’s a misunders-",
+"offset": Vector2(3195.91, 485.056),
+"options": {
+0: {
+"condition": {},
+"link": &"1_13",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_13": {
+"dialogue": "Well guard dogs, let's see if  you can catch me first!  Get them Novelites! 
+Buy me some time while I summon this death magic from this book
+Wuahahaha!",
+"offset": Vector2(3595.61, 612.78),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 4
+},
+"1_14": {
+"dialogue": "Wait, so you’re not going to kill me?",
+"offset": Vector2(327.393, 785.582),
+"options": {
+0: {
+"condition": {},
+"link": &"1_15",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 4
+},
+"1_15": {
+"dialogue": "That’s what we’re trying to tell you! This is all just a misunderstanding",
+"offset": Vector2(725.589, 788.587),
+"options": {
+0: {
+"condition": {},
+"link": &"1_16",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_16": {
+"dialogue": "We only trying to find the demonic book to escape the prison",
+"offset": Vector2(1140, 860),
+"options": {
+0: {
+"condition": {},
+"link": &"1_17",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_17": {
+"dialogue": "Oh, then why don’t you say so. I’m been guarding this book ever since I stole it from that ancient guard.",
+"offset": Vector2(1565.56, 844.184),
+"options": {
+0: {
+"condition": {},
+"link": &"1_18",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 4
+},
+"1_18": {
+"dialogue": "We need that!",
+"offset": Vector2(1980, 900),
+"options": {
+0: {
+"condition": {},
+"link": &"1_19",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_19": {
+"dialogue": "Hold up, I’ll give this to you, but in exchange I’ll join you escape the prison",
+"offset": Vector2(2380, 920),
+"options": {
+0: {
+"condition": {},
+"link": &"1_20",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 4
+},
+"1_2": {
+"dialogue": "Oh no she's running away, we have to chase her!",
+"offset": Vector2(4020, 480),
+"options": {
+0: {
+"condition": {},
+"link": &"1_25",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_20": {
+"dialogue": "it’s a deal!",
+"offset": Vector2(2740.62, 937.348),
+"options": {
+0: {
+"condition": {},
+"link": &"1_21",
+"text": ""
+}
+},
+"size": Vector2(300.001, 275),
+"speaker": 0
+},
+"1_21": {
+"dialogue": "Alright, finally I will able to escape this prison and return to my true form.",
+"offset": Vector2(3240, 960),
+"options": {
+0: {
+"condition": {},
+"link": &"1_22",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 4
+},
+"1_22": {
+"dialogue": "You mean you’re not a talking doll?",
+"offset": Vector2(3600, 980),
+"options": {
+0: {
+"condition": {},
+"link": &"1_23",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_23": {
+"dialogue": "No of course, some light show up and I turn into this somehow. 
+You should be glad since I will help you as a mastermind of this operation",
+"offset": Vector2(3993.81, 953.876),
+"options": {
+0: {
+"condition": {},
+"link": &"1_24",
+"text": ""
+}
+},
+"size": Vector2(300.001, 275),
+"speaker": 4
+},
+"1_24": {
+"dialogue": "Ah, okay bau bau.",
+"offset": Vector2(4480, 960),
+"options": {
+0: {
+"condition": {},
+"link": &"1_29",
+"text": ""
+}
+},
+"size": Vector2(300.001, 275),
+"speaker": 2
+},
+"1_25": {
+"dialogue": "Becareful Moco-chan! These ghost seems dangerous
+(I have to protect us)",
+"offset": Vector2(4360, 460),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_26": {
+"dialogue": "What do we do, we cannot catch her",
+"offset": Vector2(200, -540),
+"options": {
+0: {
+"condition": {},
+"link": &"1_27",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_27": {
+"dialogue": "We need to trap her, use me to seal the path!",
+"offset": Vector2(560, -600),
+"options": {
+0: {
+"condition": {},
+"link": &"1_28",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 3
+},
+"1_28": {
+"dialogue": "Alright, Pero!",
+"offset": Vector2(920, -600),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_29": {
+"dialogue": "Random Light show up huh? (It might be my magic before...)",
+"offset": Vector2(4833.32, 894.36),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 3
+},
+"1_3": {
+"dialogue": "What is this room? There’s a lot of dolls",
+"offset": Vector2(286.822, -167.085),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_4": {
+"dialogue": "These are creepy, let’s go out of here Fuwa-nee",
+"offset": Vector2(662.479, -188.122),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_5": {
+"dialogue": "No, Mococo we need to find the stuff pero talk about, it has to be here",
+"offset": Vector2(1040, -180),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_6": {
+"dialogue": "So you came here at last",
+"offset": Vector2(679.008, 458.009),
+"options": {
+0: {
+"condition": {},
+"link": &"1_7",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 4
+},
+"1_7": {
+"dialogue": "Fuwa-nee! That doll is speaking!",
+"offset": Vector2(1100, 480),
+"options": {
+0: {
+"condition": {},
+"link": &"1_8",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_8": {
+"dialogue": "How do you know, that we’re coming miss doll?",
+"offset": Vector2(1520, 500),
+"options": {
+0: {
+"condition": {},
+"link": &"1_9",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_9": {
+"dialogue": "Of course the great Shiori Novella knows everything, you guard dogs here to give my death sentence right?",
+"offset": Vector2(1923.19, 492.569),
+"options": {
+0: {
+"condition": {},
+"link": &"1_10",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 4
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = "res://examples/Characters.tres"

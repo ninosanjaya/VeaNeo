@@ -1,0 +1,123 @@
+[gd_scene load_steps=12 format=3 uid="uid://cyf1cupxprfo2"]
+
+[ext_resource type="Texture2D" uid="uid://cjucwg8xouvo4" path="res://Old/trace_07.png" id="1_vcx1n"]
+[ext_resource type="Texture2D" uid="uid://kxc4qeqhqpyk" path="res://Old/fire_01.png" id="2_mgrgv"]
+[ext_resource type="Texture2D" uid="uid://do0e27o7jxoca" path="res://Old/smoke_01.png" id="3_e34sb"]
+[ext_resource type="Texture2D" uid="uid://belid2yw3bjft" path="res://Old/fire_02.png" id="4_e8kdk"]
+
+[sub_resource type="Curve" id="Curve_70p2s"]
+_data = [Vector2(0, 0.650316), 0.0, 0.0, 0, 0, Vector2(0.48855, 0.496044), 0.0, 0.0, 0, 0, Vector2(1, 0.280063), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_1qrvx"]
+offsets = PackedFloat32Array(0, 0.568376, 1)
+colors = PackedColorArray(0.862745, 0.372549, 0.247059, 1, 0.835294, 0.290196, 0.196078, 0.427451, 0.811765, 0.862745, 0.156863, 0)
+
+[sub_resource type="Curve" id="Curve_t5ah5"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.28626, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_w6ohy"]
+offsets = PackedFloat32Array(0, 0.547009, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.714111, 0.837136, 3.85046e-07, 1, 0.811765, 0.862745, 0.156863, 0)
+
+[sub_resource type="Gradient" id="Gradient_x2hul"]
+offsets = PackedFloat32Array(0, 0.559829, 1)
+colors = PackedColorArray(0.862745, 0.372549, 0.247059, 1, 0.254902, 0.254902, 0.254902, 1, 0.811765, 0.862745, 0.156863, 0)
+
+[sub_resource type="Gradient" id="Gradient_8j63t"]
+offsets = PackedFloat32Array(0, 0.517094, 1)
+colors = PackedColorArray(0.785242, 0.420547, 0.268054, 1, 0.847782, 0.79405, 0, 1, 0.811765, 0.862745, 0.156863, 0)
+
+[sub_resource type="Environment" id="Environment_pw63k"]
+background_mode = 3
+glow_enabled = true
+glow_blend_mode = 1
+
+[node name="Fire" type="Node2D"]
+scale = Vector2(0.1, 0.1)
+
+[node name="background" type="CPUParticles2D" parent="."]
+visible = false
+modulate = Color(8.5, 5, 1, 1)
+amount = 15
+lifetime = 1.5
+fixed_fps = 30
+local_coords = true
+draw_order = 1
+texture = ExtResource("1_vcx1n")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2(0, -1)
+spread = 50.0
+gravity = Vector2(0, -300)
+initial_velocity_min = 1.0
+initial_velocity_max = 100.0
+angular_velocity_max = 30.0
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_70p2s")
+color_ramp = SubResource("Gradient_1qrvx")
+
+[node name="fire1" type="CPUParticles2D" parent="."]
+modulate = Color(3, 1, 1, 1)
+amount = 15
+fixed_fps = 30
+local_coords = true
+draw_order = 1
+texture = ExtResource("2_mgrgv")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2(0, -1)
+spread = 50.0
+gravity = Vector2(0, -300)
+initial_velocity_min = 1.0
+initial_velocity_max = 100.0
+angular_velocity_max = 30.0
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_t5ah5")
+color_ramp = SubResource("Gradient_w6ohy")
+
+[node name="smoke" type="CPUParticles2D" parent="."]
+amount = 15
+lifetime = 1.5
+fixed_fps = 30
+local_coords = true
+draw_order = 1
+texture = ExtResource("3_e34sb")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2(0, -1)
+spread = 17.0
+gravity = Vector2(0, -300)
+initial_velocity_min = 1.0
+initial_velocity_max = 100.0
+angular_velocity_max = 30.0
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_t5ah5")
+color_ramp = SubResource("Gradient_x2hul")
+
+[node name="fire2" type="CPUParticles2D" parent="."]
+modulate = Color(2.5, 1, 1, 1)
+amount = 15
+fixed_fps = 30
+local_coords = true
+draw_order = 1
+texture = ExtResource("4_e8kdk")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2(0, -1)
+spread = 50.0
+gravity = Vector2(0, -300)
+initial_velocity_min = 1.0
+initial_velocity_max = 100.0
+angular_velocity_max = 30.0
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_t5ah5")
+color_ramp = SubResource("Gradient_8j63t")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pw63k")

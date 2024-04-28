@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://dp8mtuixmhqls"]
+
+[ext_resource type="Script" path="res://Old/menu_pause.gd" id="1_7evtg"]
+[ext_resource type="PackedScene" uid="uid://cm7t7ah2j8nsd" path="res://Old/option.tscn" id="2_7m716"]
+[ext_resource type="Theme" uid="uid://du26p6qeu21ji" path="res://Old/ui.tres" id="3_aa8m1"]
+[ext_resource type="AudioStream" uid="uid://batmxqpt643kh" path="res://bgm/button-124476.mp3" id="4_ceu77"]
+
+[node name="Menu pause" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7evtg")
+
+[node name="Option_menu" parent="." instance=ExtResource("2_7m716")]
+visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -68.0
+offset_right = 48.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../Option")
+focus_next = NodePath("../Option")
+focus_previous = NodePath("../Quit")
+theme = ExtResource("3_aa8m1")
+text = "Resume"
+
+[node name="Option" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Resume")
+focus_neighbor_bottom = NodePath("../Main Menu")
+focus_next = NodePath("../Main Menu")
+focus_previous = NodePath("../Resume")
+theme = ExtResource("3_aa8m1")
+text = "Option"
+
+[node name="Main Menu" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Option")
+focus_neighbor_bottom = NodePath("../Quit")
+focus_next = NodePath("../Quit")
+focus_previous = NodePath("../Option")
+theme = ExtResource("3_aa8m1")
+text = "Main Menu"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Main Menu")
+focus_neighbor_bottom = NodePath("../Resume")
+focus_next = NodePath("../Resume")
+focus_previous = NodePath("../Main Menu")
+theme = ExtResource("3_aa8m1")
+text = "Quit"
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ceu77")
+volume_db = -50.0
+bus = &"SFX"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Option" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

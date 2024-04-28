@@ -1,0 +1,147 @@
+[gd_scene load_steps=18 format=3 uid="uid://bcoso72tl58x2"]
+
+[ext_resource type="Script" path="res://Old/world_F.gd" id="1_p6i4a"]
+[ext_resource type="PackedScene" uid="uid://dm1qqnn2q8y4f" path="res://Old/tile_map.tscn" id="2_5o1fs"]
+[ext_resource type="PackedScene" uid="uid://bacxdcn0mi8gr" path="res://Old/ui.tscn" id="2_wlljk"]
+[ext_resource type="PackedScene" uid="uid://b08854f6nm01h" path="res://Old/dialogue_box1.tscn" id="3_onp6c"]
+[ext_resource type="PackedScene" uid="uid://x73u5l2y8co4" path="res://Character/player.tscn" id="3_trmnw"]
+[ext_resource type="PackedScene" uid="uid://btf75r4ti78mi" path="res://Character/player2.tscn" id="4_fddc5"]
+[ext_resource type="Resource" uid="uid://drfwri5ua5v60" path="res://Old/Final_dialogue.tres" id="4_vtle4"]
+[ext_resource type="PackedScene" uid="uid://dp8mtuixmhqls" path="res://Old/menu_pause.tscn" id="5_hy71q"]
+[ext_resource type="Script" path="res://Old/Boss_health.gd" id="10_4bsus"]
+[ext_resource type="Texture2D" uid="uid://c868ocbxja0ci" path="res://Old/enemies_boss-Sheet.png" id="11_8yyvi"]
+[ext_resource type="PackedScene" uid="uid://c8v7gb3yglsl1" path="res://Old/enemy_final_boss.tscn" id="12_wmxqx"]
+[ext_resource type="PackedScene" uid="uid://bxo0sh4orkuvg" path="res://Old/laser.tscn" id="13_tdvol"]
+[ext_resource type="AudioStream" uid="uid://iddpitcflnec" path="res://bgm/MUSCLE_DENSITY_1000%.mp3" id="13_ul584"]
+[ext_resource type="AudioStream" uid="uid://batmxqpt643kh" path="res://bgm/button-124476.mp3" id="14_6knvg"]
+[ext_resource type="AudioStream" uid="uid://pflkaaklqbi2" path="res://bgm/giant_walk_sfx_loop.mp3" id="14_x2feo"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3cuot"]
+load_path = "res://.godot/imported/Portrait.png-d05a71320d1bbc7960d1ab2012e4ff00.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_078hm"]
+size = Vector2(53, 408)
+
+[node name="WorldF" type="Node2D"]
+script = ExtResource("1_p6i4a")
+
+[node name="UI" parent="." instance=ExtResource("2_wlljk")]
+
+[node name="DialogueBox" parent="UI" instance=ExtResource("3_onp6c")]
+anchors_preset = 5
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = -158.0
+offset_top = 4.0
+offset_right = 468.0
+offset_bottom = 132.0
+grow_vertical = 1
+size_flags_horizontal = 4
+size_flags_vertical = 0
+dialogue_data = ExtResource("4_vtle4")
+start_id = ""
+sample_portrait = SubResource("CompressedTexture2D_3cuot")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = -20.0
+offset_top = -12.0
+offset_right = 352.0
+offset_bottom = 205.0
+color = Color(0, 0, 0, 1)
+
+[node name="Menu pause" parent="UI" instance=ExtResource("5_hy71q")]
+
+[node name="TileMap" parent="." instance=ExtResource("2_5o1fs")]
+
+[node name="Player" parent="." instance=ExtResource("3_trmnw")]
+position = Vector2(198, -156)
+
+[node name="RayCast2D" type="RayCast2D" parent="Player"]
+position = Vector2(1, -42)
+
+[node name="Player2" parent="." instance=ExtResource("4_fddc5")]
+position = Vector2(104, -207)
+
+[node name="SwitchTimer" type="Timer" parent="."]
+
+[node name="Areas" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(55, -101)
+zoom = Vector2(0.5, 0.5)
+
+[node name="Boss_health" type="Control" parent="Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("10_4bsus")
+
+[node name="ProgressBar" type="ProgressBar" parent="Camera2D/Boss_health"]
+layout_mode = 0
+offset_left = -251.0
+offset_top = 143.0
+offset_right = 266.0
+offset_bottom = 170.0
+max_value = 50.0
+show_percentage = false
+
+[node name="blocker" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="blocker"]
+position = Vector2(-267, -90)
+shape = SubResource("RectangleShape2D_078hm")
+
+[node name="blocker2" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="blocker2"]
+position = Vector2(382, -93)
+shape = SubResource("RectangleShape2D_078hm")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Enemy_final_boss" parent="." instance=ExtResource("12_wmxqx")]
+position = Vector2(-182, -74)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-126, -146)
+scale = Vector2(2, 2)
+texture = ExtResource("11_8yyvi")
+hframes = 16
+vframes = 5
+frame = 1
+
+[node name="laser" parent="." instance=ExtResource("13_tdvol")]
+position = Vector2(-24, -141)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_ul584")
+volume_db = -60.0
+autoplay = true
+bus = &"BGM"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_x2feo")
+volume_db = -40.0
+bus = &"BGM"
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.894118, 0.376471, 0.25098, 1)
+energy = 0.1
+blend_mode = 1
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_6knvg")
+volume_db = -50.0
+bus = &"SFX"
+
+[connection signal="dialogue_ended" from="UI/DialogueBox" to="." method="_on_dialogue_box_dialogue_ended"]
+[connection signal="dialogue_proceeded" from="UI/DialogueBox" to="." method="_on_dialogue_box_dialogue_proceeded"]
+[connection signal="timeout" from="SwitchTimer" to="." method="_on_switch_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

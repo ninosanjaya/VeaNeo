@@ -1,0 +1,176 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://drfwri5ua5v60"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_8vgva"]
+
+[resource]
+script = ExtResource("1_8vgva")
+starts = {
+"checkpoint": &"0_2",
+"final_enter": &"0_1",
+"halfway": &"0_3"
+}
+nodes = {
+"0_1": {
+"link": &"1_2",
+"offset": Vector2(-62.4688, -409.505),
+"start_id": "final_enter"
+},
+"0_2": {
+"link": &"1_1",
+"offset": Vector2(-37.3517, -155.952),
+"start_id": "checkpoint"
+},
+"0_3": {
+"link": &"1_7",
+"offset": Vector2(65.837, 161.995),
+"start_id": "halfway"
+},
+"1_1": {
+"dialogue": "Get ready, I'll be here to support you,
+Mentally...",
+"offset": Vector2(185.373, -217.773),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 3
+},
+"1_10": {
+"dialogue": "Not enough time, just quickly defeat the warden before he did anything to them! ",
+"offset": Vector2(1440, 20),
+"options": {
+0: {
+"condition": {},
+"link": &"1_11",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 3
+},
+"1_11": {
+"dialogue": "BAU BAU!",
+"offset": Vector2(1820, -20),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 2
+},
+"1_2": {
+"dialogue": "Cute Puppies! Must pet them!",
+"offset": Vector2(280, -580),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 10
+},
+"1_3": {
+"dialogue": "Oh no, the warden is a creepy demon ",
+"offset": Vector2(614.947, -571.918),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_4": {
+"dialogue": "No just that, he’s infected. Quick we must get out of this prison before he catch us!",
+"offset": Vector2(960, -580),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 3
+},
+"1_5": {
+"dialogue": "Running away? no way! I will not let you pet me! This is time for EXTREME VIOLENCE!",
+"offset": Vector2(1321.56, -668.781),
+"options": {
+0: {
+"condition": {},
+"link": &"1_6",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_6": {
+"dialogue": "[font_size={50}] BAU BAU! [/font_size]",
+"offset": Vector2(1700, -600),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 2
+},
+"1_7": {
+"dialogue": "Hiaa! FuwaMoco! I manage to cleanse everyone except the warden",
+"offset": Vector2(300, 140),
+"options": {
+0: {
+"condition": {},
+"link": &"1_8",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 3
+},
+"1_8": {
+"dialogue": "Oh no, the puppies guard is in the middle of the battle will get attack by the warden!",
+"offset": Vector2(678.766, 33.5623),
+"options": {
+0: {
+"condition": {},
+"link": &"1_9",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_9": {
+"dialogue": "We must protect them! ",
+"offset": Vector2(1040, 20),
+"options": {
+0: {
+"condition": {},
+"link": &"1_10",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = "res://examples/Characters.tres"

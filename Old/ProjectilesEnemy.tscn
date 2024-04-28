@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://bowvyvp6pr3ny"]
+
+[ext_resource type="Script" path="res://Old/Projectiles2.gd" id="1_prlmj"]
+[ext_resource type="Texture2D" uid="uid://cs5wt500f8svo" path="res://Old/Sprite_characters_objects_total_sprite_sheet.png" id="2_a11dd"]
+[ext_resource type="Script" path="res://Old/Damaging_pro.gd" id="3_u06qv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fwj5"]
+size = Vector2(10, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_idy4q"]
+size = Vector2(14, 12)
+
+[node name="ProjectilesEnemy" type="CharacterBody2D"]
+script = ExtResource("1_prlmj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_a11dd")
+hframes = 7
+vframes = 3
+frame = 1
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1fwj5")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="Damaging_pro" type="Area2D" parent="."]
+script = ExtResource("3_u06qv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damaging_pro"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_idy4q")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Damaging_pro" to="Damaging_pro" method="_on_body_entered"]

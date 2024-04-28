@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3nvuqvp81nge"]
+
+[ext_resource type="Texture2D" uid="uid://b1fokanmrbkrx" path="res://art2/bijou_background.png" id="1_jyjrx"]
+
+[node name="PBackground" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -100
+scale = Vector2(2, 2)
+motion_scale = Vector2(1.1, 1.1)
+motion_mirroring = Vector2(700, 390)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+z_index = -100
+texture = ExtResource("1_jyjrx")
+offset = Vector2(0, -75)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(700, 0)
+scale = Vector2(2, 2)
+motion_scale = Vector2(1.1, 1.1)
+motion_mirroring = Vector2(700, 390)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("1_jyjrx")
+offset = Vector2(0, -75)

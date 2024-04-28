@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy828eo67ihc5"]
+
+[ext_resource type="Texture2D" uid="uid://csak3s1k6r1ap" path="res://art2/shiori_background.png" id="1_uwqdj"]
+
+[node name="PBackground" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -100
+scale = Vector2(2, 2)
+motion_scale = Vector2(0.9, 0.9)
+motion_mirroring = Vector2(700, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+z_index = -100
+texture = ExtResource("1_uwqdj")
+offset = Vector2(0, -75)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(700, 0)
+scale = Vector2(2, 2)
+motion_scale = Vector2(0.9, 0.9)
+motion_mirroring = Vector2(700, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("1_uwqdj")
+offset = Vector2(0, -75)

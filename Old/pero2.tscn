@@ -1,0 +1,117 @@
+[gd_scene load_steps=10 format=3 uid="uid://ck6nsta0fmg4m"]
+
+[ext_resource type="Script" path="res://Old/pero2.gd" id="1_4qer3"]
+[ext_resource type="Shader" path="res://Old/outline.gdshader" id="2_3sl7b"]
+[ext_resource type="Texture2D" uid="uid://cs5wt500f8svo" path="res://Old/Sprite_characters_objects_total_sprite_sheet.png" id="2_tt2lb"]
+[ext_resource type="AudioStream" uid="uid://bjlqvvt2hs775" path="res://bgm/sparkle_sfx.mp3" id="3_gggh2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k1w7k"]
+shader = ExtResource("2_3sl7b")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 1.0
+shader_parameter/outline_select = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_la1s1"]
+size = Vector2(33, 41)
+
+[sub_resource type="Animation" id="Animation_3yoi7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [14]
+}
+
+[sub_resource type="Animation" id="Animation_1ocp5"]
+resource_name = "pero_idle"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_tt2lb")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [14, 15, 16, 17]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8tln7"]
+_data = {
+"RESET": SubResource("Animation_3yoi7"),
+"pero_idle": SubResource("Animation_1ocp5")
+}
+
+[node name="Pero" type="Area2D"]
+script = ExtResource("1_4qer3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_k1w7k")
+position = Vector2(0, -18)
+texture = ExtResource("2_tt2lb")
+hframes = 7
+vframes = 3
+frame = 14
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -14.5)
+shape = SubResource("RectangleShape2D_la1s1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8tln7")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -2574.0
+offset_top = -1453.0
+offset_right = 2595.0
+offset_bottom = 1228.0
+
+[node name="sfx_sparkle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gggh2")
+volume_db = -50.0
+bus = &"SFX"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

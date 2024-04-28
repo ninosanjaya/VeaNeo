@@ -1,0 +1,129 @@
+[gd_scene load_steps=6 format=3 uid="uid://cm7t7ah2j8nsd"]
+
+[ext_resource type="Script" path="res://Old/option.gd" id="1_aftap"]
+[ext_resource type="FontFile" uid="uid://06djxm4iqomb" path="res://Old/PixelGameFont.ttf" id="2_0mfrw"]
+[ext_resource type="AudioStream" uid="uid://batmxqpt643kh" path="res://bgm/button-124476.mp3" id="3_72c2q"]
+
+[sub_resource type="Theme" id="Theme_crvws"]
+default_font = ExtResource("2_0mfrw")
+
+[sub_resource type="Theme" id="Theme_o8nmx"]
+default_font = ExtResource("2_0mfrw")
+
+[node name="Option" type="Popup"]
+size = Vector2i(339, 212)
+visible = true
+script = ExtResource("1_aftap")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.495, 1.495)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 0.0117647, 0.054902, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="TabContainer" type="TabContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = -68.0
+offset_right = 77.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_crvws")
+
+[node name="Options" type="MarginContainer" parent="TabContainer"]
+layout_mode = 2
+theme = SubResource("Theme_o8nmx")
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Options"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 2
+
+[node name="Label" type="Label" parent="TabContainer/Options/GridContainer"]
+layout_mode = 2
+text = "Display Mode"
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Options/GridContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../HSlider3")
+focus_neighbor_bottom = NodePath("../CheckButton")
+focus_next = NodePath("../CheckButton")
+focus_previous = NodePath("../HSlider3")
+icon_alignment = 2
+vertical_icon_alignment = 0
+
+[node name="Label2" type="Label" parent="TabContainer/Options/GridContainer"]
+layout_mode = 2
+text = "VSYNC"
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Options/GridContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../OptionButton")
+focus_neighbor_bottom = NodePath("../HSlider")
+focus_next = NodePath("../HSlider")
+focus_previous = NodePath("../OptionButton")
+
+[node name="Label3" type="Label" parent="TabContainer/Options/GridContainer"]
+layout_mode = 2
+text = "Master Audio"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Options/GridContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../CheckButton")
+focus_neighbor_bottom = NodePath("../HSlider2")
+focus_next = NodePath("../HSlider2")
+focus_previous = NodePath("../CheckButton")
+min_value = -20.0
+max_value = 30.0
+
+[node name="Label4" type="Label" parent="TabContainer/Options/GridContainer"]
+layout_mode = 2
+text = "BGM "
+
+[node name="HSlider2" type="HSlider" parent="TabContainer/Options/GridContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../HSlider")
+focus_neighbor_bottom = NodePath("../HSlider3")
+focus_next = NodePath("../HSlider3")
+focus_previous = NodePath("../HSlider")
+min_value = -20.0
+max_value = 30.0
+
+[node name="Label5" type="Label" parent="TabContainer/Options/GridContainer"]
+layout_mode = 2
+text = "SFX"
+
+[node name="HSlider3" type="HSlider" parent="TabContainer/Options/GridContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../HSlider2")
+focus_neighbor_bottom = NodePath("../OptionButton")
+focus_next = NodePath("../OptionButton")
+focus_previous = NodePath("../HSlider2")
+min_value = -20.0
+max_value = 30.0
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_72c2q")
+volume_db = -50.0
+bus = &"SFX"
+
+[connection signal="item_selected" from="TabContainer/Options/GridContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="toggled" from="TabContainer/Options/GridContainer/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="value_changed" from="TabContainer/Options/GridContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="TabContainer/Options/GridContainer/HSlider2" to="." method="_on_h_slider_2_value_changed"]
+[connection signal="value_changed" from="TabContainer/Options/GridContainer/HSlider3" to="." method="_on_h_slider_3_value_changed"]

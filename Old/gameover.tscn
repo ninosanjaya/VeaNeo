@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://dgehgvifwbt72"]
+
+[ext_resource type="Script" path="res://Old/gameover.gd" id="1_bajha"]
+[ext_resource type="Texture2D" uid="uid://cdbkqx8qa1ood" path="res://cutscene/gameover.png" id="1_mnavh"]
+[ext_resource type="FontFile" uid="uid://06djxm4iqomb" path="res://Old/PixelGameFont.ttf" id="2_a2dck"]
+[ext_resource type="AudioStream" uid="uid://b4fjvmhcjvlv8" path="res://bgm/fuwamoco_hit.wav" id="4_iwiy2"]
+
+[sub_resource type="Theme" id="Theme_830ix"]
+
+[sub_resource type="Theme" id="Theme_ebbb5"]
+default_font = ExtResource("2_a2dck")
+
+[sub_resource type="Theme" id="Theme_0wraj"]
+default_font = ExtResource("2_a2dck")
+
+[sub_resource type="Theme" id="Theme_dgckj"]
+default_font = ExtResource("2_a2dck")
+
+[node name="Gameover" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bajha")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("1_mnavh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 71.0
+offset_right = 195.0
+offset_bottom = 159.0
+theme = SubResource("Theme_830ix")
+color = Color(0, 0, 0, 0.392157)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 77.0
+offset_right = 178.0
+offset_bottom = 152.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ebbb5")
+text = "Retry?"
+
+[node name="Yes" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../No")
+focus_neighbor_bottom = NodePath("../No")
+focus_next = NodePath("../No")
+focus_previous = NodePath("../No")
+theme = SubResource("Theme_0wraj")
+text = "Yes"
+
+[node name="No" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Yes")
+focus_neighbor_bottom = NodePath("../Yes")
+focus_next = NodePath("../Yes")
+focus_previous = NodePath("../Yes")
+theme = SubResource("Theme_dgckj")
+text = "No"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_iwiy2")
+volume_db = -50.0
+autoplay = true
+bus = &"SFX"
+
+[connection signal="pressed" from="VBoxContainer/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="VBoxContainer/No" to="." method="_on_no_pressed"]

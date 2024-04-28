@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://du0wim34k6wxy"]
+
+[ext_resource type="FontFile" uid="uid://06djxm4iqomb" path="res://Old/PixelGameFont.ttf" id="1_toaes"]
+
+[resource]
+font = ExtResource("1_toaes")
+font_size = 20

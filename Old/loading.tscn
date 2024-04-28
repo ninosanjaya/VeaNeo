@@ -1,0 +1,143 @@
+[gd_scene load_steps=19 format=3 uid="uid://bt36cltqg5r28"]
+
+[ext_resource type="Script" path="res://Old/Loading.gd" id="1_unlmi"]
+[ext_resource type="Texture2D" uid="uid://cshroobu2xuij" path="res://Old/Sprite_characters_fuwawa_total_sprite_sheet.png" id="2_di8d6"]
+[ext_resource type="FontFile" uid="uid://06djxm4iqomb" path="res://Old/PixelGameFont.ttf" id="2_k57hi"]
+[ext_resource type="Texture2D" uid="uid://cgspx2egi235r" path="res://Old/Sprite_characters_mococo_total_sprite_sheet.png" id="3_2oex2"]
+
+[sub_resource type="Theme" id="Theme_re0qc"]
+default_font = ExtResource("2_k57hi")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdemx"]
+atlas = ExtResource("2_di8d6")
+region = Rect2(0, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_177rk"]
+atlas = ExtResource("2_di8d6")
+region = Rect2(48, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j28d4"]
+atlas = ExtResource("2_di8d6")
+region = Rect2(96, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0iibi"]
+atlas = ExtResource("2_di8d6")
+region = Rect2(144, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxxyb"]
+atlas = ExtResource("2_di8d6")
+region = Rect2(192, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27etg"]
+atlas = ExtResource("2_di8d6")
+region = Rect2(240, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpyyh"]
+atlas = ExtResource("3_2oex2")
+region = Rect2(0, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eg1ts"]
+atlas = ExtResource("3_2oex2")
+region = Rect2(48, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8u2ir"]
+atlas = ExtResource("3_2oex2")
+region = Rect2(96, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_um726"]
+atlas = ExtResource("3_2oex2")
+region = Rect2(144, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igvnk"]
+atlas = ExtResource("3_2oex2")
+region = Rect2(192, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ato0e"]
+atlas = ExtResource("3_2oex2")
+region = Rect2(240, 336, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1qmxl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdemx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_177rk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j28d4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0iibi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxxyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27etg")
+}],
+"loop": true,
+"name": &"fuwawa",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bpyyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eg1ts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8u2ir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_um726")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igvnk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ato0e")
+}],
+"loop": true,
+"name": &"mococo",
+"speed": 5.0
+}]
+
+[node name="Loading" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_unlmi")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 328.0
+offset_bottom = 184.0
+color = Color(0, 0, 0, 1)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 96.0
+offset_right = 304.0
+offset_bottom = 123.0
+theme = SubResource("Theme_re0qc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(32, 72)
+scale = Vector2(0.833333, 0.833333)
+sprite_frames = SubResource("SpriteFrames_1qmxl")
+animation = &"fuwawa"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

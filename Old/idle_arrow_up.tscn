@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://carwf05f27ylq"]
+
+[ext_resource type="Script" path="res://Old/idle_arrow_up.gd" id="1_6fey3"]
+[ext_resource type="Texture2D" uid="uid://bku8w25oafrr0" path="res://Old/Custom Edited - Friday Night Funkin Customs - Arrows Complex Kids TV-Style.png" id="2_tj0hw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvmmk"]
+atlas = ExtResource("2_tj0hw")
+region = Rect2(268, 278, 134, 139)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yngod"]
+atlas = ExtResource("2_tj0hw")
+region = Rect2(268, 139, 134, 139)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hi0ec"]
+atlas = ExtResource("2_tj0hw")
+region = Rect2(268, 0, 134, 139)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfubu"]
+atlas = ExtResource("2_tj0hw")
+region = Rect2(268, 139, 134, 139)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gbd6r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvmmk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yngod")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hi0ec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfubu")
+}],
+"loop": false,
+"name": &"wrong",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0a6xq"]
+size = Vector2(20, 27)
+
+[node name="idle_arrow_up" type="Area2D"]
+script = ExtResource("1_6fey3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -4.76837e-07)
+scale = Vector2(0.268657, 0.258993)
+sprite_frames = SubResource("SpriteFrames_gbd6r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_0a6xq")
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
+[connection signal="area_shape_exited" from="." to="." method="_on_area_shape_exited"]

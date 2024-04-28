@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccdvmy6be8m5y"]
+
+[ext_resource type="Script" path="res://Old/Projectiles2.0.gd" id="1_j7v00"]
+[ext_resource type="Texture2D" uid="uid://cs5wt500f8svo" path="res://Old/Sprite_characters_objects_total_sprite_sheet.png" id="2_74usw"]
+[ext_resource type="Script" path="res://Old/Damaging_pro_Tone.gd" id="3_yp240"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fwj5"]
+size = Vector2(12, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_idy4q"]
+size = Vector2(24, 22)
+
+[node name="Projectiles_Tone" type="CharacterBody2D"]
+script = ExtResource("1_j7v00")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_74usw")
+hframes = 7
+vframes = 3
+frame = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_1fwj5")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.7
+one_shot = true
+
+[node name="Damaging_pro" type="Area2D" parent="."]
+script = ExtResource("3_yp240")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damaging_pro"]
+position = Vector2(-3, 2)
+shape = SubResource("RectangleShape2D_idy4q")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Damaging_pro" to="Damaging_pro" method="_on_body_entered"]

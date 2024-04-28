@@ -1,0 +1,147 @@
+[gd_scene load_steps=18 format=3 uid="uid://bacxdcn0mi8gr"]
+
+[ext_resource type="Script" path="res://Old/Life.gd" id="1_5l8b5"]
+[ext_resource type="Texture2D" uid="uid://bfrgxgky1d2qm" path="res://Old/2_heart.png" id="1_hfgle"]
+[ext_resource type="PackedScene" uid="uid://bl3ni3p0c53md" path="res://Old/mana.tscn" id="1_i60et"]
+[ext_resource type="FontFile" uid="uid://06djxm4iqomb" path="res://Old/PixelGameFont.ttf" id="5_hcwp7"]
+[ext_resource type="Script" path="res://Old/Skill&Change.gd" id="6_04v3b"]
+[ext_resource type="Texture2D" uid="uid://bl1f47cag5qmh" path="res://art2/UI_skill1.0.png" id="7_s6mu1"]
+[ext_resource type="Shader" path="res://Old/outline.gdshader" id="7_tfvt5"]
+[ext_resource type="Texture2D" uid="uid://co6juw3w1huu5" path="res://art2/UI_skill2.0.png" id="8_4svp2"]
+[ext_resource type="Texture2D" uid="uid://drrbvdj4gdrvr" path="res://art2/UI_skill3.0.png" id="9_fp4vc"]
+[ext_resource type="Texture2D" uid="uid://b3hdo43vq1gt8" path="res://art2/UI_skill4.1.png" id="10_cy7sb"]
+[ext_resource type="PackedScene" uid="uid://dh311kr5rdpd4" path="res://Old/mobile.tscn" id="12_tg8y0"]
+
+[sub_resource type="Theme" id="Theme_2mypc"]
+default_font = ExtResource("5_hcwp7")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_80y22"]
+shader = ExtResource("7_tfvt5")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 1.0
+shader_parameter/outline_select = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_offeb"]
+shader = ExtResource("7_tfvt5")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 1.0
+shader_parameter/outline_select = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iwwb8"]
+shader = ExtResource("7_tfvt5")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 1.0
+shader_parameter/outline_select = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n4iuv"]
+shader = ExtResource("7_tfvt5")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 1.0
+shader_parameter/outline_select = false
+
+[sub_resource type="Theme" id="Theme_l2p2r"]
+default_font = ExtResource("5_hcwp7")
+default_font_size = 10
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Mana" parent="." instance=ExtResource("1_i60et")]
+theme = SubResource("Theme_2mypc")
+
+[node name="Life" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_5l8b5")
+
+[node name="Heart" type="TextureRect" parent="Life"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 9.0
+offset_right = 107.0
+offset_bottom = 109.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_hfgle")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Skill&Change" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_04v3b")
+
+[node name="Skill1" type="Sprite2D" parent="Skill&Change"]
+material = SubResource("ShaderMaterial_80y22")
+position = Vector2(20, 18)
+texture = ExtResource("7_s6mu1")
+
+[node name="Skill2" type="Sprite2D" parent="Skill&Change"]
+material = SubResource("ShaderMaterial_offeb")
+position = Vector2(20, 18)
+texture = ExtResource("8_4svp2")
+
+[node name="Skill3" type="Sprite2D" parent="Skill&Change"]
+material = SubResource("ShaderMaterial_iwwb8")
+position = Vector2(20, 18)
+texture = ExtResource("9_fp4vc")
+
+[node name="Skill4" type="Sprite2D" parent="Skill&Change"]
+material = SubResource("ShaderMaterial_n4iuv")
+position = Vector2(20, 18)
+texture = ExtResource("10_cy7sb")
+
+[node name="Label" type="Label" parent="Skill&Change"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = -52.0
+offset_right = 166.0
+offset_bottom = -39.0
+theme = SubResource("Theme_l2p2r")
+text = "1.00"
+
+[node name="Label2" type="Label" parent="Skill&Change"]
+layout_mode = 0
+offset_left = 113.0
+offset_top = -52.0
+offset_right = 135.0
+offset_bottom = -39.0
+theme = SubResource("Theme_l2p2r")
+text = "1.00"
+
+[node name="Label3" type="Label" parent="Skill&Change"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = -51.0
+offset_right = 103.0
+offset_bottom = -38.0
+theme = SubResource("Theme_l2p2r")
+text = "1.00"
+
+[node name="Label4" type="Label" parent="Skill&Change"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = -51.0
+offset_right = 72.0
+offset_bottom = -38.0
+theme = SubResource("Theme_l2p2r")
+text = "1.00"
+
+[node name="Timer" type="Timer" parent="Skill&Change"]
+wait_time = 5.0
+one_shot = true
+
+[node name="Mobile" parent="." instance=ExtResource("12_tg8y0")]
+visible = false
+
+[connection signal="timeout" from="Skill&Change/Timer" to="Skill&Change" method="_on_timer_timeout"]

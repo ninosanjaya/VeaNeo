@@ -1,0 +1,109 @@
+[gd_scene load_steps=11 format=3 uid="uid://dh311kr5rdpd4"]
+
+[ext_resource type="Script" path="res://Old/mobile.gd" id="1_vylj8"]
+[ext_resource type="Texture2D" uid="uid://b0r4fgotj7gxm" path="res://art2/UI_attacka.png" id="2_a8wsm"]
+[ext_resource type="Texture2D" uid="uid://x0lcv5aq5fa7" path="res://art2/UI_move_up.png" id="2_kwdn3"]
+[ext_resource type="Texture2D" uid="uid://bvjt7n3rj44h2" path="res://art2/UI_move_down.png" id="3_ewpdg"]
+[ext_resource type="Texture2D" uid="uid://brwqasnyj16gq" path="res://art2/UI_attackb.png" id="3_w0wx4"]
+[ext_resource type="Texture2D" uid="uid://csrkf8tsion10" path="res://art2/UI_move_left.png" id="4_a2eun"]
+[ext_resource type="Texture2D" uid="uid://bjxpsriic10xu" path="res://art2/UI_move_right.png" id="5_aaepv"]
+[ext_resource type="Texture2D" uid="uid://ceod2vpchr6qd" path="res://art2/UI_dash.png" id="7_3ggfc"]
+[ext_resource type="Texture2D" uid="uid://blgq3drfmjmmp" path="res://art2/UI_switch.png" id="8_mt6ve"]
+[ext_resource type="Texture2D" uid="uid://bw3bss0e3m6ss" path="res://art2/UI_skillA.png" id="10_vghgh"]
+
+[node name="Mobile" type="CanvasLayer"]
+script = ExtResource("1_vylj8")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AttackA" type="TouchScreenButton" parent="."]
+position = Vector2(216, 128)
+texture_normal = ExtResource("2_a8wsm")
+texture_pressed = ExtResource("2_a8wsm")
+action = "attack"
+
+[node name="AttackB" type="TouchScreenButton" parent="."]
+position = Vector2(240, 96)
+texture_normal = ExtResource("3_w0wx4")
+texture_pressed = ExtResource("3_w0wx4")
+action = "skill"
+
+[node name="dash" type="TouchScreenButton" parent="."]
+position = Vector2(256, 128)
+texture_normal = ExtResource("7_3ggfc")
+texture_pressed = ExtResource("7_3ggfc")
+action = "dash"
+
+[node name="switch" type="TouchScreenButton" parent="."]
+position = Vector2(272, 72)
+texture_normal = ExtResource("8_mt6ve")
+texture_pressed = ExtResource("8_mt6ve")
+action = "map"
+
+[node name="skill1" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(278, 8)
+texture_normal = ExtResource("10_vghgh")
+texture_pressed = ExtResource("10_vghgh")
+action = "switchc"
+
+[node name="skill2" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(247, 8)
+texture_normal = ExtResource("10_vghgh")
+texture_pressed = ExtResource("10_vghgh")
+action = "switchc"
+
+[node name="skill3" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(216, 8)
+texture_normal = ExtResource("10_vghgh")
+texture_pressed = ExtResource("10_vghgh")
+action = "switchc"
+
+[node name="skill4" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(184, 8)
+texture_normal = ExtResource("10_vghgh")
+texture_pressed = ExtResource("10_vghgh")
+action = "switchc"
+
+[node name="up" type="TouchScreenButton" parent="."]
+modulate = Color(0.352941, 0.352941, 0.352941, 1)
+position = Vector2(272, 96)
+texture_normal = ExtResource("2_kwdn3")
+texture_pressed = ExtResource("2_kwdn3")
+action = "up"
+
+[node name="left" type="TouchScreenButton" parent="."]
+modulate = Color(0.352941, 0.352941, 0.352941, 1)
+position = Vector2(8, 112)
+scale = Vector2(1.25, 1)
+texture_normal = ExtResource("4_a2eun")
+texture_pressed = ExtResource("4_a2eun")
+action = "left"
+
+[node name="right" type="TouchScreenButton" parent="."]
+modulate = Color(0.352941, 0.352941, 0.352941, 1)
+position = Vector2(72, 112)
+scale = Vector2(1.25, 1)
+texture_normal = ExtResource("5_aaepv")
+texture_pressed = ExtResource("5_aaepv")
+action = "right"
+
+[node name="down2" type="TouchScreenButton" parent="."]
+modulate = Color(0.352941, 0.352941, 0.352941, 1)
+position = Vector2(40, 144)
+scale = Vector2(1.25, 1)
+texture_normal = ExtResource("3_ewpdg")
+texture_pressed = ExtResource("3_ewpdg")
+action = "down"
+
+[connection signal="pressed" from="skill1" to="." method="_on_skill_1_pressed"]
+[connection signal="pressed" from="skill2" to="." method="_on_skill_2_pressed"]
+[connection signal="pressed" from="skill3" to="." method="_on_skill_3_pressed"]
+[connection signal="pressed" from="skill4" to="." method="_on_skill_4_pressed"]

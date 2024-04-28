@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://3lmvo8r25iih"]
+
+[ext_resource type="Texture2D" uid="uid://bkk6krko3q7te" path="res://Old/backgrounds_outside.png" id="1_6qbne"]
+
+[node name="PBackground" type="Node2D"]
+position = Vector2(0, -1)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1.1, 1.1)
+motion_mirroring = Vector2(700, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("1_6qbne")
+offset = Vector2(0, -75)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(700, 0)
+motion_scale = Vector2(1.1, 1.1)
+motion_mirroring = Vector2(700, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("1_6qbne")
+offset = Vector2(0, -75)

@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=3 uid="uid://b08854f6nm01h"]
+
+[ext_resource type="FontFile" uid="uid://06djxm4iqomb" path="res://Old/PixelGameFont.ttf" id="1_8gnoj"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="2_8b4i6"]
+[ext_resource type="Resource" uid="uid://urxlbil6noly" path="res://Old/intro_dialogue.tres" id="3_whu6w"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="4_ioigq"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="5_5k5jh"]
+
+[sub_resource type="Theme" id="Theme_gjoo4"]
+default_font = ExtResource("1_8gnoj")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ofi7d"]
+bg_color = Color(0, 0, 0, 0.784314)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xbwwf"]
+load_path = "res://.godot/imported/Portrait.png-d05a71320d1bbc7960d1ab2012e4ff00.ctex"
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_l3b8y"]
+script = ExtResource("4_ioigq")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_263if"]
+script = ExtResource("5_5k5jh")
+
+[node name="DialogueBox" type="Panel"]
+visible = false
+custom_minimum_size = Vector2(256, 128)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -157.0
+offset_top = -69.0
+offset_right = 469.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_gjoo4")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ofi7d")
+script = ExtResource("2_8b4i6")
+dialogue_data = ExtResource("3_whu6w")
+start_id = "Intro_dialogue1"
+max_options = 3
+options_vertical = true
+options_position = 2
+sample_portrait = SubResource("CompressedTexture2D_xbwwf")
+custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_l3b8y"), SubResource("RichTextEffect_263if")])

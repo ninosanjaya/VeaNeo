@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkvu4q52xw234"]
+
+[ext_resource type="Texture2D" uid="uid://dalkd7b4okv7l" path="res://Old/tileset_1.png" id="1_c5is1"]
+[ext_resource type="Script" path="res://Old/bridge_1.gd" id="1_hvjj2"]
+[ext_resource type="Shader" path="res://Old/outline.gdshader" id="2_0memr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8hrll"]
+shader = ExtResource("2_0memr")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 1.0
+shader_parameter/outline_select = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kessl"]
+size = Vector2(378, 17.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibds8"]
+size = Vector2(392.5, 54)
+
+[node name="Bridge0" type="StaticBody2D"]
+script = ExtResource("1_hvjj2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_8hrll")
+position = Vector2(1569.5, -87.5)
+scale = Vector2(16.15, 0.65)
+texture = ExtResource("1_c5is1")
+hframes = 16
+vframes = 16
+frame = 58
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(1572, -87.125)
+shape = SubResource("RectangleShape2D_kessl")
+one_way_collision = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(1574.75, -87)
+shape = SubResource("RectangleShape2D_ibds8")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

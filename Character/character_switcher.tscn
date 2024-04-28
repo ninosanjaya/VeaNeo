@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://bu3dv8rx2bq01"]
+
+[ext_resource type="Script" path="res://Character/character_switcher.gd" id="1_7ic8n"]
+[ext_resource type="PackedScene" uid="uid://x73u5l2y8co4" path="res://Character/player.tscn" id="1_vvwnl"]
+[ext_resource type="PackedScene" uid="uid://btf75r4ti78mi" path="res://Character/player2.tscn" id="2_kvf00"]
+[ext_resource type="PackedScene" uid="uid://br5xvo1lwas6k" path="res://Character/player3.tscn" id="3_hcnhk"]
+[ext_resource type="PackedScene" uid="uid://bupnqrysrjgnp" path="res://Character/player1.tscn" id="3_wgbnw"]
+
+[node name="Character_switcher" type="Node"]
+script = ExtResource("1_7ic8n")
+
+[node name="Player" parent="." instance=ExtResource("1_vvwnl")]
+position = Vector2(86.5293, 139.358)
+
+[node name="Player1" parent="." instance=ExtResource("3_wgbnw")]
+position = Vector2(41, 86)
+
+[node name="Player2" parent="." instance=ExtResource("2_kvf00")]
+position = Vector2(86, 83)
+
+[node name="Player3" parent="." instance=ExtResource("3_hcnhk")]
+position = Vector2(139, 86)

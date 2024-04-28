@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://o1s3ak6wt8x"]
+
+[ext_resource type="Script" path="res://Old/move_arrow_up.gd" id="1_qn752"]
+[ext_resource type="Texture2D" uid="uid://bku8w25oafrr0" path="res://Old/Custom Edited - Friday Night Funkin Customs - Arrows Complex Kids TV-Style.png" id="2_jiow2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shj8m"]
+size = Vector2(20, 26)
+
+[node name="Move_arrow_up" type="Area2D"]
+position = Vector2(108, -27)
+script = ExtResource("1_qn752")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.268657, 0.258993)
+texture = ExtResource("2_jiow2")
+hframes = 4
+vframes = 3
+frame = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_shj8m")
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
+[connection signal="area_shape_exited" from="." to="." method="_on_area_shape_exited"]

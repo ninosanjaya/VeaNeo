@@ -1,0 +1,412 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://iusm1vbi0yff"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_8xfac"]
+
+[resource]
+script = ExtResource("1_8xfac")
+starts = {
+"bijou_enter": &"0_1",
+"checkpoint1": &"0_4",
+"kaela": &"0_6",
+"meet_bijou": &"0_2",
+"meet_bijou2": &"0_5",
+"ollie": &"0_7",
+"win_bijou": &"0_3"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(69.9341, -306.144),
+"start_id": "bijou_enter"
+},
+"0_2": {
+"link": &"1_4",
+"offset": Vector2(-30.4577, 22.9399),
+"start_id": "meet_bijou"
+},
+"0_3": {
+"link": &"1_12",
+"offset": Vector2(-32.7336, 309.799),
+"start_id": "win_bijou"
+},
+"0_4": {
+"link": &"1_22",
+"offset": Vector2(-67.5677, 619.666),
+"start_id": "checkpoint1"
+},
+"0_5": {
+"link": &"1_8",
+"offset": Vector2(1480, -180),
+"start_id": "meet_bijou2"
+},
+"0_6": {
+"link": &"1_23",
+"offset": Vector2(220.011, -628.786),
+"start_id": "kaela"
+},
+"0_7": {
+"link": &"1_25",
+"offset": Vector2(180.355, -1159.32),
+"start_id": "ollie"
+},
+"1_1": {
+"dialogue": "Is this a mining room? ",
+"offset": Vector2(340, -360),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_10": {
+"dialogue": "Must protect Biboo!",
+"offset": Vector2(2424.85, -139.966),
+"options": {
+0: {
+"condition": {},
+"link": &"1_11",
+"text": ""
+}
+},
+"size": Vector2(312.293, 275),
+"speaker": 9
+},
+"1_11": {
+"dialogue": "We have to fight him!",
+"offset": Vector2(2812.81, -156.359),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_12": {
+"dialogue": "Sorry, Me don’t know you are Biboo friend",
+"offset": Vector2(240, 220),
+"options": {
+0: {
+"condition": {},
+"link": &"1_13",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 9
+},
+"1_13": {
+"dialogue": "It’s okay Pebble. Are you guys alright? ",
+"offset": Vector2(700, 280),
+"options": {
+0: {
+"condition": {},
+"link": &"1_14",
+"text": ""
+}
+},
+"size": Vector2(301.366, 275),
+"speaker": 5
+},
+"1_14": {
+"dialogue": "Yeah, we’re actually trying to find things to escape the prison",
+"offset": Vector2(1080, 300),
+"options": {
+0: {
+"condition": {},
+"link": &"1_15",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_15": {
+"dialogue": "You mean like this sacred ink that I use to draw my face?~",
+"offset": Vector2(1446.78, 228.861),
+"options": {
+0: {
+"condition": {},
+"link": &"1_16",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 5
+},
+"1_16": {
+"dialogue": "Oh that’s the Sacred Ink!",
+"offset": Vector2(1800, 240),
+"options": {
+0: {
+"condition": {},
+"link": &"1_17",
+"text": ""
+}
+},
+"size": Vector2(301.365, 275),
+"speaker": 0
+},
+"1_17": {
+"dialogue": "But how do you draw your own face? You just a rock? ",
+"offset": Vector2(2180, 240),
+"options": {
+0: {
+"condition": {},
+"link": &"1_18",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_18": {
+"dialogue": "Let’s just say this is not my true form. 
+I’m a magical Jewel! Tee hee!~",
+"offset": Vector2(2540, 260),
+"options": {
+0: {
+"condition": {},
+"link": &"1_19",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 5
+},
+"1_19": {
+"dialogue": "oh OK…",
+"offset": Vector2(3000, 160),
+"options": {
+0: {
+"condition": {},
+"link": &"1_20",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_2": {
+"dialogue": "Maybe this is a room made by prisoner to escape the prison",
+"offset": Vector2(700, -420),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_20": {
+"dialogue": "Well do you want to join our group and escape the prison?",
+"offset": Vector2(3348.29, 271.208),
+"options": {
+0: {
+"condition": {},
+"link": &"1_21",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_21": {
+"dialogue": "Yes I love to join you! ",
+"offset": Vector2(3720, 300),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 5
+},
+"1_22": {
+"dialogue": "Get ready, I'll be here to support you,
+Mentally...",
+"offset": Vector2(200, 600),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 3
+},
+"1_23": {
+"dialogue": "Hi there, are you here to do some grind too?",
+"offset": Vector2(460, -860),
+"options": {
+0: {
+"condition": {},
+"link": &"1_24",
+"text": ""
+}
+},
+"size": Vector2(300, 274),
+"speaker": "Kaela"
+},
+"1_24": {
+"dialogue": "Don't mind me, I'm just gonna keep mining~",
+"offset": Vector2(840, -940),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 274),
+"speaker": "Kaela"
+},
+"1_25": {
+"dialogue": "Are you having trouble with the door?
+Have you tried putting that Bone Key?",
+"offset": Vector2(400, -1340),
+"options": {
+0: {
+"condition": {},
+"link": &"1_26",
+"text": ""
+}
+},
+"size": Vector2(300, 274),
+"speaker": "Ollie"
+},
+"1_26": {
+"dialogue": "Oh you're asking why am I here?
+Well I'm a Zombie idol that going to take the whole prison to be my fan!
+",
+"offset": Vector2(780, -1360),
+"options": {
+0: {
+"condition": {},
+"link": &"1_27",
+"text": ""
+}
+},
+"size": Vector2(300, 274),
+"speaker": "Ollie"
+},
+"1_27": {
+"dialogue": "Actually Kaela just bring me here through the mines ",
+"offset": Vector2(1160, -1380),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 274),
+"speaker": "Ollie"
+},
+"1_3": {
+"dialogue": "Okay, let’s check if we can find someone here",
+"offset": Vector2(1066.14, -458.046),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_4": {
+"dialogue": "Moco-chan, look there’s a lot of rocks there",
+"offset": Vector2(220, -100),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_5": {
+"dialogue": "Wait Fuwa-nee, those rocks is moving",
+"offset": Vector2(545.201, -38.8803),
+"options": {
+0: {
+"condition": {},
+"link": &"1_6",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_6": {
+"dialogue": "Hello! Do you want to play with me?",
+"offset": Vector2(929.055, -77.129),
+"options": {
+0: {
+"condition": {},
+"link": &"1_7",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 5
+},
+"1_7": {
+"dialogue": "The rocks can talk!",
+"offset": Vector2(1280, -100),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 2
+},
+"1_8": {
+"dialogue": "Don’t hurt Biboo! ",
+"offset": Vector2(1720, -160),
+"options": {
+0: {
+"condition": {},
+"link": &"1_9",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 9
+},
+"1_9": {
+"dialogue": "Oh no! The big rock is coming here",
+"offset": Vector2(2027.34, -123.574),
+"options": {
+0: {
+"condition": {},
+"link": &"1_10",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = "res://examples/Characters.tres"

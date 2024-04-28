@@ -1,0 +1,1022 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://urxlbil6noly"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_rji37"]
+
+[resource]
+script = ExtResource("1_rji37")
+starts = {
+"Clean1_no": &"0_5",
+"Clean1_yes": &"0_8",
+"Intro_dialogue1": &"0_1",
+"Last_prepare": &"0_4",
+"Main_gate": &"0_6",
+"Main_gate_no": &"0_7",
+"Main_gate_yes": &"0_9",
+"Tutorial_dialogue2": &"0_2",
+"Tutorial_dialogue3": &"0_3",
+"first key": &"0_13",
+"key1": &"0_10",
+"key2": &"0_11",
+"key3": &"0_12",
+"pekora": &"0_15",
+"testing": &"0_14"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(-140, -40),
+"start_id": "Intro_dialogue1"
+},
+"0_10": {
+"link": &"1_44",
+"offset": Vector2(-87.9044, -332.15),
+"start_id": "key1"
+},
+"0_11": {
+"link": &"1_45",
+"offset": Vector2(520, -360),
+"start_id": "key2"
+},
+"0_12": {
+"link": &"1_46",
+"offset": Vector2(1300, -400),
+"start_id": "key3"
+},
+"0_13": {
+"link": &"1_49",
+"offset": Vector2(40, -680),
+"start_id": "first key"
+},
+"0_14": {
+"link": &"1_54",
+"offset": Vector2(186.52, -1158.19),
+"start_id": "testing"
+},
+"0_15": {
+"link": &"1_65",
+"offset": Vector2(285.89, -1747.18),
+"start_id": "pekora"
+},
+"0_2": {
+"link": &"1_10",
+"offset": Vector2(-480, 540),
+"start_id": "Tutorial_dialogue2"
+},
+"0_3": {
+"link": &"1_14",
+"offset": Vector2(-554.09, 940.355),
+"start_id": "Tutorial_dialogue3"
+},
+"0_4": {
+"link": &"1_43",
+"offset": Vector2(-824.791, 2899.19),
+"start_id": "Last_prepare"
+},
+"0_5": {
+"link": &"1_19",
+"offset": Vector2(-860, 1280),
+"start_id": "Clean1_no"
+},
+"0_6": {
+"link": &"1_22",
+"offset": Vector2(-620, 1940),
+"start_id": "Main_gate"
+},
+"0_7": {
+"link": &"1_33",
+"offset": Vector2(-860, 2260),
+"start_id": "Main_gate_no"
+},
+"0_8": {
+"link": &"1_67",
+"offset": Vector2(-1120, 1460),
+"start_id": "Clean1_yes"
+},
+"0_9": {
+"link": &"1_35",
+"offset": Vector2(-836.279, 2393.42),
+"start_id": "Main_gate_yes"
+},
+"1_1": {
+"dialogue": "Ah.. I didn’t mean to sneeze…",
+"offset": Vector2(260, -20),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300.002, 275),
+"speaker": 1
+},
+"1_10": {
+"dialogue": "What is this tutorial sign?",
+"offset": Vector2(-180, 540),
+"options": {
+0: {
+"condition": {},
+"link": &"1_11",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_11": {
+"dialogue": "Ahem! This is tutorial for the game, let me explain",
+"offset": Vector2(240, 560),
+"options": {
+0: {
+"condition": {},
+"link": &"1_12",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 3
+},
+"1_12": {
+"dialogue": "We don’t need tutorial!",
+"offset": Vector2(600, 600),
+"options": {
+0: {
+"condition": {},
+"link": &"1_13",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_13": {
+"dialogue": "This is important! Listen to The Great Peroccino!",
+"offset": Vector2(940, 620),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 3
+},
+"1_14": {
+"dialogue": "Other than that you also have skill attack if you gain enough mana",
+"offset": Vector2(-280, 900),
+"options": {
+0: {
+"condition": {},
+"link": &"1_15",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 3
+},
+"1_15": {
+"dialogue": "What is mana?",
+"offset": Vector2(100, 960),
+"options": {
+0: {
+"condition": {},
+"link": &"1_16",
+"text": ""
+}
+},
+"size": Vector2(300.001, 275),
+"speaker": 1
+},
+"1_16": {
+"dialogue": "Let’s say it’s Bau bau energy",
+"offset": Vector2(480, 960),
+"options": {
+0: {
+"condition": {},
+"link": &"1_17",
+"text": ""
+}
+},
+"size": Vector2(300.002, 275),
+"speaker": 3
+},
+"1_17": {
+"dialogue": "BAU BAU!",
+"offset": Vector2(860, 1000),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 274.999),
+"speaker": 1
+},
+"1_18": {
+"dialogue": "The guards, now they become cute puppies!",
+"offset": Vector2(-180, 1600),
+"options": {
+0: {
+"condition": {},
+"link": &"1_20",
+"text": ""
+}
+},
+"size": Vector2(300, 275.001),
+"speaker": 0
+},
+"1_19": {
+"dialogue": "I’ll be here after you defeat all the infected guards",
+"offset": Vector2(-300, 1260),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 3
+},
+"1_2": {
+"dialogue": "Puppies…. Must Pettt…..",
+"offset": Vector2(600, 0),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 7
+},
+"1_20": {
+"dialogue": "Pero, is this okay?",
+"offset": Vector2(160, 1620),
+"options": {
+0: {
+"condition": {},
+"link": &"1_21",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_21": {
+"dialogue": "Hmm... Well at least they will not hurt anyone",
+"offset": Vector2(600, 1600),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 3
+},
+"1_22": {
+"dialogue": "Are you intending to leave this prison?",
+"offset": Vector2(-380, 1900),
+"options": {
+0: {
+"condition": {},
+"link": &"1_23",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 8
+},
+"1_23": {
+"dialogue": "Yes, we want to leave the prison mister",
+"offset": Vector2(-40, 1960),
+"options": {
+0: {
+"condition": {},
+"link": &"1_24",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_24": {
+"dialogue": "No one can leave the Demonic Prison of the underworld!",
+"offset": Vector2(319.838, 2017.18),
+"options": {
+0: {
+"condition": {},
+"link": &"1_25",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 8
+},
+"1_25": {
+"dialogue": "Oh yea, how about we fluff you up first!",
+"offset": Vector2(680, 2000),
+"options": {
+0: {
+"condition": {},
+"link": &"1_26",
+"text": ""
+}
+},
+"size": Vector2(300, 275.001),
+"speaker": 1
+},
+"1_26": {
+"dialogue": "Hahahaha! Even if you kill me, this ancient door will never open for you! Your name is already written to be held in this prison forever!",
+"offset": Vector2(1028.28, 1951.61),
+"options": {
+0: {
+"condition": {},
+"link": &"1_27",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 8
+},
+"1_27": {
+"dialogue": "Oh no, what do we do Moco-chan?",
+"offset": Vector2(1361.59, 1890.14),
+"options": {
+0: {
+"condition": {},
+"link": &"1_28",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_28": {
+"dialogue": "The guard said the truth, the only way to fully escape this prison is to remove your name from the demonic book prison",
+"offset": Vector2(1760, 1940),
+"options": {
+0: {
+"condition": {},
+"link": &"1_29",
+"text": ""
+}
+},
+"size": Vector2(300.001, 275),
+"speaker": 3
+},
+"1_29": {
+"dialogue": "What is that? Is that kinda like Death Note version of prisoner?",
+"offset": Vector2(2224.11, 2008.98),
+"options": {
+0: {
+"condition": {},
+"link": &"1_30",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_3": {
+"dialogue": "Ugh.. these guards become creepy..",
+"offset": Vector2(1040, 20),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_30": {
+"dialogue": "Sort of, and not just the demonic book. We also need to find the raven quill and the sacred ink, in order to fully remove your name.",
+"offset": Vector2(2560.43, 1996.69),
+"options": {
+0: {
+"condition": {},
+"link": &"1_31",
+"text": ""
+}
+},
+"size": Vector2(300.002, 275.001),
+"speaker": 3
+},
+"1_31": {
+"dialogue": "Waa… that’s a lot, where can we find that…",
+"offset": Vector2(2920, 2020),
+"options": {
+0: {
+"condition": {},
+"link": &"1_32",
+"text": ""
+}
+},
+"size": Vector2(300.001, 275),
+"speaker": 0
+},
+"1_32": {
+"dialogue": "Don’t know, probably around this god forsaken prison.",
+"offset": Vector2(3360, 2020),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300.001, 275),
+"speaker": 3
+},
+"1_33": {
+"dialogue": "No one can leave the Demonic Prison of the underworld!",
+"offset": Vector2(-400, 2220),
+"options": {
+0: {
+"condition": {},
+"link": &"1_34",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 8
+},
+"1_34": {
+"dialogue": "Forget about him, we need to find the Demonic Book, Raven Quill, and the Sacred Ink.",
+"offset": Vector2(-40, 2280),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 3
+},
+"1_35": {
+"dialogue": "Yes so we finally have all the key items. The demonic book, sacred ink and raven feather",
+"offset": Vector2(-420, 2600),
+"options": {
+0: {
+"condition": {},
+"link": &"1_36",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 3
+},
+"1_36": {
+"dialogue": "With this we can finally be free",
+"offset": Vector2(-75.5132, 2664.61),
+"options": {
+0: {
+"condition": {},
+"link": &"1_37",
+"text": ""
+}
+},
+"size": Vector2(300, 275.001),
+"speaker": 0
+},
+"1_37": {
+"dialogue": "let me write *scribble* *scribble* Done",
+"offset": Vector2(319.515, 2510.22),
+"options": {
+0: {
+"condition": {},
+"link": &"1_38",
+"text": ""
+}
+},
+"size": Vector2(300, 274.999),
+"speaker": 3
+},
+"1_38": {
+"dialogue": "Yes we can escape the prison!",
+"offset": Vector2(698.323, 2791.08),
+"options": {
+0: {
+"condition": {},
+"link": &"1_39",
+"text": ""
+}
+},
+"size": Vector2(300, 275.001),
+"speaker": 1
+},
+"1_39": {
+"dialogue": "Not yet, there still a warden guarding at the exit of the prison",
+"offset": Vector2(1100, 2660),
+"options": {
+0: {
+"condition": {},
+"link": &"1_40",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 4
+},
+"1_4": {
+"dialogue": "What do we do now Pero?",
+"offset": Vector2(1400, 40),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": ""
+}
+},
+"size": Vector2(300.001, 275),
+"speaker": 0
+},
+"1_40": {
+"dialogue": "What? How many guard does this prison have?",
+"offset": Vector2(1480, 2680),
+"options": {
+0: {
+"condition": {},
+"link": &"1_41",
+"text": ""
+}
+},
+"size": Vector2(300.001, 275),
+"speaker": 6
+},
+"1_41": {
+"dialogue": "Yeah, why can the prison guard be cute as Fuwamoco?",
+"offset": Vector2(1840, 2680),
+"options": {
+0: {
+"condition": {},
+"link": &"1_42",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 5
+},
+"1_42": {
+"dialogue": "Anyway, this will be your last fight, so be ready.",
+"offset": Vector2(2222.07, 2529.84),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275.001),
+"speaker": 3
+},
+"1_43": {
+"dialogue": "You will fight the Warden, are you ready?
+
+",
+"offset": Vector2(-480, 2980),
+"options": {
+0: {
+"condition": {},
+"link": &"1_47",
+"text": "Yes"
+},
+1: {
+"condition": {},
+"link": &"1_48",
+"text": "No"
+}
+},
+"size": Vector2(300, 308),
+"speaker": 3
+},
+"1_44": {
+"dialogue": "We already get the Demonic Book from Shiori",
+"offset": Vector2(127.559, -457.647),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_45": {
+"dialogue": "We already get the Raven Quill from Nerissa",
+"offset": Vector2(820, -480),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_46": {
+"dialogue": "We already get the Sacred Ink from Bijou",
+"offset": Vector2(1660, -500),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_47": {
+"dialogue": "Let's go! BAUBAU!
+
+",
+"offset": Vector2(-60, 2980),
+"options": {
+0: {
+"condition": {},
+"link": &"4_1",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 2
+},
+"1_48": {
+"dialogue": "Uh.. not yet
+
+",
+"offset": Vector2(20, 3320),
+"options": {
+0: {
+"condition": {},
+"link": &"4_2",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_49": {
+"dialogue": "We got the key item!",
+"offset": Vector2(340, -860),
+"options": {
+0: {
+"condition": {},
+"link": &"1_50",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_5": {
+"dialogue": "Don’t need to worry since I The Great Peroccino will guide you",
+"offset": Vector2(1800, 80),
+"options": {
+0: {
+"condition": {},
+"link": &"1_6",
+"text": ""
+}
+},
+"size": Vector2(300.001, 275),
+"speaker": 3
+},
+"1_50": {
+"dialogue": "What is this? Do we have new skill?",
+"offset": Vector2(680, -880),
+"options": {
+0: {
+"condition": {},
+"link": &"1_51",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_51": {
+"dialogue": "Yes that is a new skill gain from your friend",
+"offset": Vector2(1040, -860),
+"options": {
+0: {
+"condition": {},
+"link": &"1_52",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 3
+},
+"1_52": {
+"dialogue": "Wow that sound amazing Pero",
+"offset": Vector2(1420, -840),
+"options": {
+0: {
+"condition": {},
+"link": &"1_53",
+"text": ""
+}
+},
+"size": Vector2(315.972, 275),
+"speaker": 0
+},
+"1_53": {
+"dialogue": "You can switch skill by pressing “Q” or “E”",
+"offset": Vector2(1800, -840),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300.001, 275),
+"speaker": 3
+},
+"1_54": {
+"dialogue": "1",
+"offset": Vector2(440, -1300),
+"options": {
+0: {
+"condition": {},
+"link": &"1_55",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_55": {
+"dialogue": "2",
+"offset": Vector2(802.862, -1388.27),
+"options": {
+0: {
+"condition": {},
+"link": &"1_56",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_56": {
+"dialogue": "3",
+"offset": Vector2(1160, -1360),
+"options": {
+0: {
+"condition": {},
+"link": &"1_57",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 2
+},
+"1_57": {
+"dialogue": "4",
+"offset": Vector2(1530.52, -1391.35),
+"options": {
+0: {
+"condition": {},
+"link": &"1_58",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 3
+},
+"1_58": {
+"dialogue": "5",
+"offset": Vector2(1958.49, -1391.35),
+"options": {
+0: {
+"condition": {},
+"link": &"1_59",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 4
+},
+"1_59": {
+"dialogue": "6",
+"offset": Vector2(2347.47, -1412.9),
+"options": {
+0: {
+"condition": {},
+"link": &"1_60",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 5
+},
+"1_6": {
+"dialogue": "Thank you Master Pero!",
+"offset": Vector2(2220, 200),
+"options": {
+0: {
+"condition": {},
+"link": &"1_7",
+"text": ""
+}
+},
+"size": Vector2(300.001, 275),
+"speaker": 0
+},
+"1_60": {
+"dialogue": "7",
+"offset": Vector2(2760, -1400),
+"options": {
+0: {
+"condition": {},
+"link": &"1_61",
+"text": ""
+}
+},
+"size": Vector2(300.001, 275),
+"speaker": 6
+},
+"1_61": {
+"dialogue": "8",
+"offset": Vector2(3140, -1420),
+"options": {
+0: {
+"condition": {},
+"link": &"1_62",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 7
+},
+"1_62": {
+"dialogue": "9",
+"offset": Vector2(3615.99, -1532.98),
+"options": {
+0: {
+"condition": {},
+"link": &"1_63",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 8
+},
+"1_63": {
+"dialogue": "10",
+"offset": Vector2(3997.02, -1467.67),
+"options": {
+0: {
+"condition": {},
+"link": &"1_64",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 9
+},
+"1_64": {
+"dialogue": "11",
+"offset": Vector2(4360, -1500),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300.001, 275),
+"speaker": 10
+},
+"1_65": {
+"dialogue": "Peko peko!
+When I'm out of this cell, 
+I'll get that onigiri from you Peko!",
+"offset": Vector2(540, -1820),
+"options": {
+0: {
+"condition": {},
+"link": &"1_66",
+"text": ""
+}
+},
+"size": Vector2(300, 274),
+"speaker": "Pekora"
+},
+"1_66": {
+"dialogue": "Mogu Mogu",
+"offset": Vector2(900, -1900),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 274),
+"speaker": "Okayu"
+},
+"1_67": {
+"dialogue": "Okay, now since they are down, I can extract their mana,
+And return them to their original form!",
+"offset": Vector2(-940, 1580),
+"options": {
+0: {
+"condition": {},
+"link": &"1_68",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 3
+},
+"1_68": {
+"dialogue": "*ZAAPPP!!*",
+"offset": Vector2(-540, 1580),
+"options": {
+0: {
+"condition": {},
+"link": &"1_18",
+"text": ""
+}
+},
+"size": Vector2(302.053, 274),
+"speaker": ""
+},
+"1_7": {
+"dialogue": "Since this is not a permanent spell, what you need to do is beat them up, and I can extract their negative energy, after that they will return to normal again",
+"offset": Vector2(2620, 280),
+"options": {
+0: {
+"condition": {},
+"link": &"1_8",
+"text": ""
+}
+},
+"size": Vector2(300.002, 275),
+"speaker": 3
+},
+"1_8": {
+"dialogue": "Looks like we need to use violence on these guard zombie! Let’s do this Fuwa-nee!",
+"offset": Vector2(3020, 300),
+"options": {
+0: {
+"condition": {},
+"link": &"1_9",
+"text": ""
+}
+},
+"size": Vector2(300.001, 275),
+"speaker": 1
+},
+"1_9": {
+"dialogue": "
+[font_size={50}] BAU BAU! [/font_size]",
+"offset": Vector2(3540, 320),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 2
+},
+"4_1": {
+"link": "END",
+"offset": Vector2(440, 3100),
+"type": 0,
+"value": "true",
+"variable": "final"
+},
+"4_2": {
+"link": "END",
+"offset": Vector2(420, 3380),
+"type": 0,
+"value": "false",
+"variable": "final"
+}
+}
+variables = {
+"final": {
+"type": 1,
+"value": false
+}
+}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = "res://examples/Characters.tres"

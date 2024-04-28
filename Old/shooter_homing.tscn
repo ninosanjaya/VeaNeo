@@ -1,0 +1,126 @@
+[gd_scene load_steps=8 format=3 uid="uid://bfng1p21k6plo"]
+
+[ext_resource type="Script" path="res://Old/shooter_homing.gd" id="1_3c4hu"]
+[ext_resource type="PackedScene" uid="uid://di3ef718antiq" path="res://Old/bullet.tscn" id="2_bnws2"]
+[ext_resource type="Texture2D" uid="uid://cs5wt500f8svo" path="res://Old/Sprite_characters_objects_total_sprite_sheet.png" id="3_jh6bj"]
+[ext_resource type="AudioStream" uid="uid://cls3bfpwc8rvl" path="res://bgm/shooting-sound-fx-159024.mp3" id="4_1lyrm"]
+
+[sub_resource type="Animation" id="Animation_3xx0x"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_6ik4m"]
+resource_name = "shoot"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_jh6bj")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [3, 4, 3]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["throw_item"],
+"method": &"emit_signal"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dwgbo"]
+_data = {
+"RESET": SubResource("Animation_3xx0x"),
+"shoot": SubResource("Animation_6ik4m")
+}
+
+[node name="Shooter_homing" type="Node2D"]
+script = ExtResource("1_3c4hu")
+bulletScene = ExtResource("2_bnws2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dwgbo")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.5708
+texture = ExtResource("3_jh6bj")
+hframes = 7
+vframes = 3
+frame = 4
+
+[node name="Marker2D" type="Marker2D" parent="Sprite2D"]
+position = Vector2(-1.39876e-06, 32)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="Line2D" type="Line2D" parent="."]
+visible = false
+position = Vector2(-65.9454, -16)
+scale = Vector2(1.40886, 1)
+points = PackedVector2Array(2, 17, 26, 17, 37, 17)
+width = 0.5
+default_color = Color(1, 0, 0, 1)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+visible = false
+target_position = Vector2(-2000, 0)
+collide_with_areas = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_1lyrm")
+volume_db = -50.0
+max_distance = 700.0
+bus = &"SFX"
+
+[connection signal="throw_item" from="." to="." method="_on_throw_item"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

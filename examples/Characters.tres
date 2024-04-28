@@ -1,0 +1,85 @@
+[gd_resource type="Resource" script_class="CharacterList" load_steps=25 format=3 uid="uid://di21ijmfa2s22"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/CharacterList.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://b3de5dvkfytjq" path="res://Old/Character.tres" id="1_sc4te"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/Character.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://bcjfgy2awn3dl" path="res://art2/Mococo.png" id="3_iq87x"]
+[ext_resource type="Texture2D" uid="uid://bxo4cxma12d0m" path="res://art2/Fuwamoco.png" id="4_atiil"]
+[ext_resource type="Texture2D" uid="uid://c0wbbpgdgxyao" path="res://art2/Pero.png" id="5_vs3yq"]
+[ext_resource type="Texture2D" uid="uid://c0i37hmr8o06w" path="res://art2/Shiori.png" id="6_ib3u0"]
+[ext_resource type="Texture2D" uid="uid://cn7rbo5ncio7w" path="res://art2/Biboo.png" id="7_bkice"]
+[ext_resource type="Texture2D" uid="uid://c8jiiiro2csx6" path="res://art2/Nerisa.png" id="8_b4og8"]
+[ext_resource type="Texture2D" uid="uid://dgdua1akp4nuv" path="res://art2/guard.png" id="9_p3l4k"]
+[ext_resource type="Texture2D" uid="uid://b41otxbltwm6f" path="res://art2/door.png" id="10_qtxfb"]
+[ext_resource type="Texture2D" uid="uid://dhjye7chx1qan" path="res://art2/gigachad.png" id="11_5l8v2"]
+[ext_resource type="Texture2D" uid="uid://bfu42adjtw65i" path="res://art2/boss.png" id="12_b8jah"]
+
+[sub_resource type="Resource" id="Resource_ajd0j"]
+script = ExtResource("2")
+name = "Fuwawa"
+image = ExtResource("1_sc4te")
+color = Color(0.192157, 0.427451, 1, 1)
+
+[sub_resource type="Resource" id="Resource_7va2s"]
+script = ExtResource("2")
+name = "Mococo"
+image = ExtResource("3_iq87x")
+color = Color(1, 0.447059, 0.768627, 1)
+
+[sub_resource type="Resource" id="Resource_ldt3k"]
+script = ExtResource("2")
+name = "FuwaMoco"
+image = ExtResource("4_atiil")
+color = Color(1, 1, 1, 1)
+
+[sub_resource type="Resource" id="Resource_3byri"]
+script = ExtResource("2")
+name = "Pero"
+image = ExtResource("5_vs3yq")
+color = Color(0.528859, 0.605106, 0.702516, 1)
+
+[sub_resource type="Resource" id="Resource_lc6f3"]
+script = ExtResource("2")
+name = "Shiori"
+image = ExtResource("6_ib3u0")
+color = Color(0.6, 0.580392, 1, 1)
+
+[sub_resource type="Resource" id="Resource_x83jt"]
+script = ExtResource("2")
+name = "Bijou"
+image = ExtResource("7_bkice")
+color = Color(0.509804, 0.298039, 1, 1)
+
+[sub_resource type="Resource" id="Resource_fvgwi"]
+script = ExtResource("2")
+name = "Nerissa"
+image = ExtResource("8_b4og8")
+color = Color(0, 0, 0.933333, 1)
+
+[sub_resource type="Resource" id="Resource_g0jyw"]
+script = ExtResource("2")
+name = "Monster Guard"
+image = ExtResource("9_p3l4k")
+color = Color(0.601223, 0.601223, 0.601223, 1)
+
+[sub_resource type="Resource" id="Resource_uijq6"]
+script = ExtResource("2")
+name = "Ancient Gate"
+image = ExtResource("10_qtxfb")
+color = Color(0.572549, 0.572549, 0.572549, 1)
+
+[sub_resource type="Resource" id="Resource_78avo"]
+script = ExtResource("2")
+name = "Gigachad Pebble"
+image = ExtResource("11_5l8v2")
+color = Color(0.517647, 0.294118, 0.152941, 1)
+
+[sub_resource type="Resource" id="Resource_1u80a"]
+script = ExtResource("2")
+name = "Monster Warden"
+image = ExtResource("12_b8jah")
+color = Color(0.80693, 0, 0.207387, 1)
+
+[resource]
+script = ExtResource("1")
+characters = Array[ExtResource("2")]([SubResource("Resource_ajd0j"), SubResource("Resource_7va2s"), SubResource("Resource_ldt3k"), SubResource("Resource_3byri"), SubResource("Resource_lc6f3"), SubResource("Resource_x83jt"), SubResource("Resource_fvgwi"), SubResource("Resource_g0jyw"), SubResource("Resource_uijq6"), SubResource("Resource_78avo"), SubResource("Resource_1u80a")])

@@ -1,0 +1,345 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://b4si6gfa0800o"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_2b33b"]
+
+[resource]
+script = ExtResource("1_2b33b")
+starts = {
+"calli": &"0_5",
+"checkpoint1": &"0_1",
+"enter_nerissa": &"0_2",
+"nerissa_ending": &"0_4",
+"nerissa_meet": &"0_3"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(63.3681, 95.9092),
+"start_id": "checkpoint1"
+},
+"0_2": {
+"link": &"1_2",
+"offset": Vector2(92.4951, -189.467),
+"start_id": "enter_nerissa"
+},
+"0_3": {
+"link": &"1_5",
+"offset": Vector2(200.957, 407.466),
+"start_id": "nerissa_meet"
+},
+"0_4": {
+"link": &"1_10",
+"offset": Vector2(120, 640),
+"start_id": "nerissa_ending"
+},
+"0_5": {
+"link": &"1_20",
+"offset": Vector2(160, -640),
+"start_id": "calli"
+},
+"1_1": {
+"dialogue": "Get ready, I'll be here to support you,
+Mentally...",
+"offset": Vector2(380, 0),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 3
+},
+"1_10": {
+"dialogue": "Wow I've never sang with someone like that before",
+"offset": Vector2(340, 620),
+"options": {
+0: {
+"condition": {},
+"link": &"1_11",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 6
+},
+"1_11": {
+"dialogue": "We *pant-* not here to challen- *pant-* you",
+"offset": Vector2(680, 620),
+"options": {
+0: {
+"condition": {},
+"link": &"1_9",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_12": {
+"dialogue": "That’s what we’re trying to tell you! It’s a misunderstanding!",
+"offset": Vector2(1437.35, 620.775),
+"options": {
+0: {
+"condition": {},
+"link": &"1_13",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_13": {
+"dialogue": "We only trying to find a raven quill to escape the prison",
+"offset": Vector2(1792.51, 640.644),
+"options": {
+0: {
+"condition": {},
+"link": &"1_14",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_14": {
+"dialogue": "Oh, uhh. I guess you can use my raven feather",
+"offset": Vector2(2200, 640),
+"options": {
+0: {
+"condition": {},
+"link": &"1_15",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 6
+},
+"1_15": {
+"dialogue": "Is this your feather?!",
+"offset": Vector2(2608.4, 604.631),
+"options": {
+0: {
+"condition": {},
+"link": &"1_16",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 2
+},
+"1_16": {
+"dialogue": "Stop questioning, just take it!",
+"offset": Vector2(2967.3, 558.683),
+"options": {
+0: {
+"condition": {},
+"link": &"1_17",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 6
+},
+"1_17": {
+"dialogue": "Okay, thank you Nerissa",
+"offset": Vector2(3293.9, 675.416),
+"options": {
+0: {
+"condition": {},
+"link": &"1_18",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_18": {
+"dialogue": "uhmm… Actually, Can I join you escape the prison? I always dream to spread my song outside this prison hell.",
+"offset": Vector2(3740, 640),
+"options": {
+0: {
+"condition": {},
+"link": &"1_19",
+"text": ""
+}
+},
+"size": Vector2(300.001, 275),
+"speaker": 6
+},
+"1_19": {
+"dialogue": "Of course!",
+"offset": Vector2(4080, 640),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_2": {
+"dialogue": "Wow this room is so bright and lively",
+"offset": Vector2(320, -420),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_20": {
+"dialogue": "Wow! This statue is so shiny",
+"offset": Vector2(440, -820),
+"options": {
+0: {
+"condition": {},
+"link": &"1_21",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_21": {
+"dialogue": "It must be someone famous...",
+"offset": Vector2(780, -800),
+"options": {
+0: {
+"condition": {},
+"link": &"1_22",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_22": {
+"dialogue": "Look Moco-chan, there numbers written here
+\"2143\"",
+"offset": Vector2(1120, -800),
+"options": {
+0: {
+"condition": {},
+"link": &"1_23",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_23": {
+"dialogue": "weird, I wonder what does that mean?...",
+"offset": Vector2(1440, -840),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_3": {
+"dialogue": "I like it, these lights that make me happy and make me want to dance",
+"offset": Vector2(680, -440),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_4": {
+"dialogue": "Moco-chan, did you hear that? someone singing...",
+"offset": Vector2(1040, -380),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_5": {
+"dialogue": "Moco-chan, look there’s a raven, maybe we can ask if she know any raven quill?",
+"offset": Vector2(460, 340),
+"options": {
+0: {
+"condition": {},
+"link": &"1_6",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_6": {
+"dialogue": "Ah another challenger, you want to defeat me the Idol Nerissa and gain the title of Idol of the prison right!",
+"offset": Vector2(860, 300),
+"options": {
+0: {
+"condition": {},
+"link": &"1_7",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 6
+},
+"1_7": {
+"dialogue": "No, we’re not here to challenge you!",
+"offset": Vector2(1240, 300),
+"options": {
+0: {
+"condition": {},
+"link": &"1_8",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 1
+},
+"1_8": {
+"dialogue": "Yeah that’s what they all say. Enough talk, let’s sing!",
+"offset": Vector2(1600, 280),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 6
+},
+"1_9": {
+"dialogue": "Wait, so you really not here to challenge me?",
+"offset": Vector2(1100, 620),
+"options": {
+0: {
+"condition": {},
+"link": &"1_12",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 6
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = "res://examples/Characters.tres"

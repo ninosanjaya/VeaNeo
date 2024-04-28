@@ -1,0 +1,214 @@
+[gd_scene load_steps=6 format=3 uid="uid://te77oq0f7at8"]
+
+[ext_resource type="PackedScene" uid="uid://bcmn84raeexu3" path="res://Old/enemy_walking.tscn" id="1_5rx8i"]
+[ext_resource type="Script" path="res://Old/enemy_walking8_0.gd" id="2_lmocr"]
+
+[sub_resource type="GDScript" id="GDScript_ok6hu"]
+script/source = "extends State
+
+
+@export var walk2_state : State
+@export var walk2_animation : String = \"idle_v2\"
+@export var damageable : Damageable
+@onready var enemy_walking = $\"../..\"
+@export var dead_animation : String = \"dead_v1\"
+@onready var character_state_machine = $\"..\"
+#func _ready():
+#	playback.travel(dead_animation)
+
+func state_process(_delta):
+	
+	if GameManager.enemies_done_3 == false:
+		playback.travel(dead_animation)
+		enemy_walking.direction.x = 0
+	if GameManager.enemies_done_3 == true:
+		playback.travel(walk2_animation)
+		next_state = walk2_state
+	
+func _on_animation_tree_animation_finished(_anim_name):
+	#damageable.health = 3
+	#enemy_walking.walk22 = true
+	
+	
+	enemy_walking.walk33 = false #walk33 true move
+	enemy_walking.walk22 = true #walk22 false attack player, walk22 true stop
+	
+	#next_state = walk2_state
+	
+	character_state_machine.current_state.can_move = false
+	
+"
+
+[sub_resource type="GDScript" id="GDScript_csn8k"]
+script/source = "extends State
+
+@onready var enemy_walking = $\"../..\"
+@export var walk_animation : String = \"idle_v2\"
+@onready var character_state_machine = $\"..\"
+@export var dead_animation : String = \"dead_v1\"
+@export var pet_animation : String = \"pet_v2\"
+@onready var hit = $\"../Hit\"
+@export var walk2_state : State
+@export var dead_state : State
+@onready var puppy = $\"../../puppy\"
+
+func _ready():
+	hit.connect(\"hit_state\", hitted)
+	#playback.travel(walk_animation)
+# Called when the node enters the scene tree for the first time.
+func state_process(_delta):
+	
+	#playback.travel(walk_animation)
+	enemy_walking.walk33 = false
+	enemy_walking.walk22 = true
+	#enemy_walking.velocity.x = 0
+	character_state_machine.current_state.can_move = false
+	
+	
+
+
+
+func hitted():
+	print(\"get hit\")
+	if GameManager.enemies_done_3 == true:
+		playback.travel(pet_animation)
+		puppy.playing = true
+		#next_state = dead_state
+	#else: 
+		#playback.travel(walk_animation)
+		#next_state = walk2_state
+
+"
+
+[sub_resource type="GDScript" id="GDScript_fplfa"]
+script/source = "extends State
+
+
+class_name HitState3
+
+@export var damageable : Damageable
+@export var dead_animation : String = \"dead_v1\"
+@export var dead_state : State
+@export var knockback_speed : float = 50.00
+@export var return_state : State
+@onready var timer : Timer = $Timer
+@onready var dead = $\"../Dead\"
+@onready var enemy_walking = $\"../..\"
+
+@export var hit_animation : String = \"hit_v1\"
+@export var walk_animation : String = \"walk_v1\"
+
+@export var pet_animation : String = \"pet_v2\"
+@export var walk2_animation : String = \"idle_v2\"
+@export var walkv2 : State
+@onready var timer_2 = $Timer2
+#@onready var animation_player_2 = $\"../../AnimationPlayer2\"
+@onready var puppy = $\"../../puppy\"
+
+const HIT_EFFECTS = preload(\"res://hit_effects.tscn\")
+@onready var hit = $\"../../hit\"
+
+signal hit_state
+
+func _ready():
+	damageable.connect(\"on_hit\", on_damageable_hit)
+	damageable.connect(\"on_hit2\", on_damageable_hit2)
+	
+func on_enter():
+	#character.velocity = knockback_velocity
+	timer.start()
+	
+func on_damageable_hit(_node: Node, _damage_amount: int, knockback_direction : Vector2):
+	#animation_player_2.play(\"slash\")
+	#_spawn_hit_effect2()
+	if(damageable.health > 0):
+		
+		character.velocity = knockback_speed * knockback_direction
+		#print(character.velocity)
+		playback.travel(hit_animation)
+		emit_signal(\"interrupt_state\", self)
+		hit.playing = true
+		#print(\"hit\")
+		#enemy_walking.walk33 = true
+	else:
+		damageable.dead1 = true
+		damageable.health = 5
+		#print(character.velocity)
+		emit_signal(\"interrupt_state\", dead_state)
+		playback.travel(dead_animation)
+		hit.playing = true
+		#enemy_walking.walk33 = false
+		#print(\"dead\")
+		
+		
+	if GameManager.mana_player_one < 100:
+		GameManager.mana_player_one += 10
+	else:
+		GameManager.mana_player_one = 100
+		
+func on_damageable_hit2(_node: Node, _damage_amount: int, _knockback_direction : Vector2):
+	
+	GameManager.mana_player_one += 10
+	
+	#emit_signal(\"hit_state\")
+	
+	#if(damageable.health > 0):
+	#	character.velocity = knockback_speed * knockback_direction
+		#print(character.velocity)
+	#	emit_signal(\"interrupt_state\", self)
+	#else:
+	#	damageable.health = 5
+		#print(character.velocity)
+	#	emit_signal(\"interrupt_state\", dead_state)
+	#	playback.travel(dead_animation)
+	if GameManager.enemies_done_3 == true:
+		playback.travel(pet_animation)
+		#next_state = walkv2
+		timer_2.start()
+		puppy.playing = true
+	
+	if GameManager.mana_player_one < 100:
+		GameManager.mana_player_one += 10
+	else:
+		GameManager.mana_player_one = 100
+		
+#unc on_exit():
+	#character.velocity = Vector2.ZERO
+	
+
+
+func _on_timer_timeout(): #for knockback
+	#playback.travel(walk_animation)
+	#if GameManager.enemies_done == false:
+		next_state = return_state
+	#if GameManager.enemies_done == true:
+		#next_state = walkv2
+
+
+
+func _on_timer_2_timeout():
+	playback.travel(walk2_animation)
+	next_state = walkv2
+	
+func _spawn_hit_effect2() -> void:
+	var hit_effect2 : Sprite2D = HIT_EFFECTS.instantiate()
+	add_child(hit_effect2)
+	#print(\"Effec\")
+"
+
+[node name="Enemy_walking" instance=ExtResource("1_5rx8i")]
+script = ExtResource("2_lmocr")
+
+[node name="Sprite2D" parent="." index="4"]
+frame = 55
+
+[node name="Dead" parent="CharacterStateMachine" index="1"]
+script = SubResource("GDScript_ok6hu")
+can_move = true
+
+[node name="Walk_V2" parent="CharacterStateMachine" index="2"]
+script = SubResource("GDScript_csn8k")
+
+[node name="Hit" parent="CharacterStateMachine" index="3"]
+script = SubResource("GDScript_fplfa")
+can_move = true

@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://bl3ni3p0c53md"]
+
+[ext_resource type="Script" path="res://Old/Mana.gd" id="1_kje1o"]
+[ext_resource type="FontFile" uid="uid://06djxm4iqomb" path="res://Old/PixelGameFont.ttf" id="2_xvlud"]
+[ext_resource type="Texture2D" uid="uid://comqrln1pkvo1" path="res://Old/GUI-Kit-Pack-Free_54v2.png" id="3_m3vi5"]
+[ext_resource type="Texture2D" uid="uid://dvadqmj73ena8" path="res://Old/GUI-Kit-Pack-Free_54.png" id="4_uvrum"]
+
+[sub_resource type="Theme" id="Theme_76tal"]
+default_font = ExtResource("2_xvlud")
+default_font_size = 12
+
+[node name="Mana" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kje1o")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 8.0
+offset_top = 32.0
+offset_right = 88.0
+offset_bottom = 52.0
+theme = SubResource("Theme_76tal")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 32.0
+offset_right = 281.0
+offset_bottom = 87.0
+scale = Vector2(0.299, 0.243)
+texture_under = ExtResource("3_m3vi5")
+texture_progress = ExtResource("4_uvrum")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
