@@ -1,8 +1,9 @@
 extends Area2D
 
 @export var damage : int = 2
-@export var player : Player2
+#@export var player : Player1
 @export var facing_shape : FacingCollisionShape2D1_2
+@onready var player = $".."
 
 func _ready():
 	monitoring = false

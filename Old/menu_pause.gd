@@ -57,7 +57,7 @@ func _on_option_pressed():
 func _on_main_menu_pressed():
 	sfx.playing = true
 	game_world.game_paused = false
-	get_tree().change_scene_to_file("res://menu.tscn")
+	get_tree().change_scene_to_file("res://Old/menu.tscn")
 
 
 func _on_quit_pressed():

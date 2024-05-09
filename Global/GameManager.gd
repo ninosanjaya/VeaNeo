@@ -81,6 +81,13 @@ var sfx_vol = -10
 #Dialogue updated?
 #Player clear the game or not
 
+#VEA NEO:
+#1 bio
+#2 chem
+#3 phy
+var bio_good1 = true
+var chem_good2 = true
+var phy_good3 = true
 
 
 	
@@ -138,6 +145,10 @@ func save():
 	file.store_var(Boss3)
 	file.store_var(BossF)
 	
+	file.store_var(bio_good1)
+	file.store_var(chem_good2)
+	file.store_var(phy_good3)
+	
 		
 func load_data():
 	if FileAccess.file_exists(save_path):
@@ -192,7 +203,9 @@ func load_data():
 		Boss3 = file.get_var(Boss3)
 		BossF = file.get_var(BossF)
 
-		
+		bio_good1 = file.get_var(bio_good1)
+		chem_good2 = file.get_var(chem_good2)
+		BossF = file.get_var(phy_good3)
 		
 		#variable4 = file.get_var(variable4)
 		
@@ -238,6 +251,10 @@ func load_data():
 		Boss2 = false
 		Boss3 = false
 		BossF = false
+		
+		bio_good1 = true
+		chem_good2 = true
+		phy_good3 = true
 		#variable4 = 0
 		
 		

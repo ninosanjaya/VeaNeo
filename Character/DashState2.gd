@@ -1,6 +1,6 @@
 extends State
 
-
+#Dash 1 evil
 class_name DashState2
 
 #@export var DASH_VELOCITY = 300.0 

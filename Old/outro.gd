@@ -94,7 +94,7 @@ func _on_animation_player_animation_finished(anim_name):
 	#		animation_player.play("intro2")
 	#elif anim_name == "intro2":
 		#Credits, then go to menu
-		get_tree().change_scene_to_file("res://credits.tscn")
+		get_tree().change_scene_to_file("res://Old/credits.tscn")
 		#get_tree().change_scene_to_file("res://menu.tscn")
 		
 		

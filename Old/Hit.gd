@@ -20,7 +20,7 @@ class_name HitState2
 @export var walkv2 : State
 @onready var timer_2 = $Timer2
 
-const HIT_EFFECTS = preload("res://hit_effects.tscn")
+const HIT_EFFECTS = preload("res://Old/hit_effects.tscn")
 
 signal hit_state
 

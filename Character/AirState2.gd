@@ -1,6 +1,6 @@
 extends State
 
-
+#Air 1 evil
 class_name AirState2
 
 @export var ground_state : State
@@ -11,7 +11,7 @@ class_name AirState2
 @onready var dash_timer = $"../Dash2/DashTimer2"
 @onready var dash_timer_3 = $"../Dash2/DashTimer3"
 
-@onready var damaging_4 = $"../../Damaging4"
+#@onready var damaging_4 = $"../../Damaging4"
 @export var skill_state : State
 @export var skill_animation4 : String = "skill4_2"
 

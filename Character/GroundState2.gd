@@ -1,6 +1,6 @@
 extends State
 
-
+#Ground 1 evil
 class_name GroundState2
 
 @export var JUMP_VELOCITY = -250.0 #-150
@@ -34,12 +34,12 @@ var direction : Vector2 = Vector2.ZERO
 #@export var ultimate_state : State
 #export var ultimate_animation : String = "ultimate"
 
-@onready var damaging = $"../../Damaging2"
+#@onready var damaging = $"../../Damaging2"
 #@export var can_skill : bool = true
 
-@onready var damaging_3 = $"../../Damaging3"
-@onready var damaging_4 = $"../../Damaging4"
-@onready var damaging_5 = $"../../Damaging5"
+#@onready var damaging_3 = $"../../Damaging3"
+#@onready var damaging_4 = $"../../Damaging4"
+#@onready var damaging_5 = $"../../Damaging5"
 
 #@onready var Projectile = preload("res://Projectiles2.tscn")
 #@onready var Projectile = preload("res://projectile.tscn")
@@ -80,177 +80,7 @@ func state_input(event : InputEvent):
 	#if(event.is_action_pressed("attack")):
 	#	attack()
 		
-	if(event.is_action_pressed("switchl") ):
-		#if GameManager.key_item1 == false
-		
-		
-		
-		if GameManager.counter < 3: 
-			GameManager.counter += 1 #1
-			GameManager.skill_switch_state = GameManager.skill_available[GameManager.counter]
-			#print(counter)
-			##GameManager.save()
-			if GameManager.skill_switch_state == 0 && GameManager.counter < 3:
-				GameManager.counter += 1 #2
-				GameManager.skill_switch_state = GameManager.skill_available[GameManager.counter]
-				#print (current_slot)
-				##GameManager.save()
-				if GameManager.skill_switch_state == 0 && GameManager.counter < 3:
-					GameManager.counter += 1 #3
-					GameManager.skill_switch_state = GameManager.skill_available[GameManager.counter]
-					#print (current_slot)
-					##GameManager.save()
-					if GameManager.skill_switch_state == 0:
-						GameManager.counter = 0 #3
-						GameManager.skill_switch_state = GameManager.skill_available[GameManager.counter]
-						print("zero2")
-						print (GameManager.skill_switch_state)
-						##GameManager.save()
-					else:
-						print("three")
-						print (GameManager.skill_switch_state)
-
-				else:
-					#counter = 0 #3
-					#current_slot = skill_available[counter]
-					if GameManager.skill_switch_state == 0:
-						GameManager.counter = 0 #3
-						GameManager.skill_switch_state = GameManager.skill_available[GameManager.counter]
-						print("zero4")
-						print (GameManager.skill_switch_state)
-						#GameManager.save()
-					else:
-						print("two")
-						print (GameManager.skill_switch_state)
-			else:
-				#counter = 0 #3
-				#current_slot = skill_available[counter]
-				if GameManager.skill_switch_state == 0:
-					GameManager.counter = 0 #3
-					GameManager.skill_switch_state = GameManager.skill_available[GameManager.counter]
-					print("zero3")
-					print (GameManager.skill_switch_state)
-					#GameManager.save()
-				else:
-					print("one")
-					print (GameManager.skill_switch_state)
-		else:
-			GameManager.counter = 0
-			GameManager.skill_switch_state = GameManager.skill_available[GameManager.counter]
-			print("zero1")
-			print (GameManager.skill_switch_state)
-			#GameManager.save()
-			#print(counter)
-		
-		#if GameManager.skill_switch_state < 3:
-		#	GameManager.skill_switch_state += 1
-		#else:
-		#	GameManager.skill_switch_state = 0
-			
-		#print(skillno)
-		
-	elif(event.is_action_pressed("switchr") ):
-		
-		#if GameManager.skill_switch_state > 0:
-		#	GameManager.skill_switch_state -= 1
-		#else:
-		#	GameManager.skill_switch_state = 3
-		
-		#skill_available[1] = 1
-		#skill_available[2] = 2
-		#skill_available[3] = 3
-			
-		if GameManager.counter > 0: 
-			GameManager.counter -= 1 #1
-			GameManager.skill_switch_state = GameManager.skill_available[GameManager.counter]
-			#print(counter)
-			#GameManager.save()
-			if GameManager.skill_switch_state == 0 && GameManager.counter > 0:
-				GameManager.counter -= 1 #2
-				GameManager.skill_switch_state = GameManager.skill_available[GameManager.counter]
-				#print (current_slot)
-				#GameManager.save()
-				if GameManager.skill_switch_state == 0 && GameManager.counter > 0:
-					GameManager.counter -= 1 #3
-					GameManager.skill_switch_state = GameManager.skill_available[GameManager.counter]
-					#print (current_slot)
-					#GameManager.save()
-					if GameManager.skill_switch_state == 0:
-						GameManager.counter = 3 #3
-						GameManager.skill_switch_state = GameManager.skill_available[GameManager.counter]
-						print("zero2")
-						print (GameManager.skill_switch_state)
-						#GameManager.save()
-					else:
-						print("three")
-						print (GameManager.skill_switch_state)
-
-				else:
-					#counter = 0 #3
-					#current_slot = skill_available[counter]
-					if GameManager.skill_switch_state == 0:
-						GameManager.counter = 3 #3
-						GameManager.skill_switch_state = GameManager.skill_available[GameManager.counter]
-						print("zero4")
-						print (GameManager.skill_switch_state)
-						#GameManager.save()
-					else:
-						print("two")
-						print (GameManager.skill_switch_state)
-			else:
-				#counter = 0 #3
-				#current_slot = skill_available[counter]
-				if GameManager.skill_switch_state == 0:
-					GameManager.counter = 3 #3
-					GameManager.skill_switch_state = GameManager.skill_available[GameManager.counter]
-					print("zero3")
-					print (GameManager.skill_switch_state)
-					#GameManager.save()
-				else:
-					print("one")
-					print (GameManager.skill_switch_state)
-		else:
-			GameManager.counter = 3
-			GameManager.skill_switch_state = GameManager.skill_available[GameManager.counter]
-			#GameManager.save()
-			if GameManager.skill_switch_state == 0:
-				GameManager.counter = 2 
-				GameManager.skill_switch_state = GameManager.skill_available[GameManager.counter]
-				#GameManager.save()
-				if GameManager.skill_switch_state == 0:
-					GameManager.counter = 1 #3
-					GameManager.skill_switch_state = GameManager.skill_available[GameManager.counter]
-					#GameManager.save()
-					if GameManager.skill_switch_state == 0:
-						GameManager.counter = 0 #3
-						GameManager.skill_switch_state = GameManager.skill_available[GameManager.counter]
-						print("zero0")
-						print (GameManager.skill_switch_state)
-						#GameManager.save()
-					else:
-						print("one0")
-						print (GameManager.skill_switch_state)
-					
-				else:
-					print("two0")
-					print (GameManager.skill_switch_state)
-			else:
-					print("three0")
-					print (GameManager.skill_switch_state)
-			
-		#print(skillno)
-		
-	if(event.is_action_pressed("switchc") && Global.can_skill == true && GameManager.skill_switch_state == 1 && GameManager.mana_player_one >= 40) && Global.talking == false && Global.dog == false:
-		skill()
-		
-	elif(event.is_action_pressed("switchc") && Global.can_skill == true && GameManager.skill_switch_state == 1.1 && GameManager.mana_player_one >= 40) && Global.talking == false && Global.dog == false:
-		skill2()
 	
-	elif(event.is_action_pressed("switchc") && Global.can_skill == true && GameManager.skill_switch_state == 1.2 && GameManager.mana_player_one >= 40) && Global.talking == false && Global.dog == false:
-		skill3()
-		
-	elif(event.is_action_pressed("switchc") && Global.can_skill == true && GameManager.skill_switch_state == 1.3 && GameManager.mana_player_one >= 40) && Global.talking == false && Global.dog == false:
-		skill4()
 	#if(event.is_action_pressed("ultimate")):
 	#	ultimate()
 	#if (event.is_action_pressed("map")  && Global.talking == false):
@@ -292,7 +122,7 @@ func jump():
 	next_state = air_state
 	playback.travel(jump_animation)
 	
-func attack():
+#func attack():
 	#emit_signal("throw_item")
 	#var projectile = Projectile.instantiate()
 	#world.add_child(projectile)
@@ -302,9 +132,9 @@ func attack():
 #		projectile.launch(direction)
 	#velocity = Vector2.ZERO
 	#spawn_rock()
-	damaging.damage = 2
-	next_state = attack_state
-	playback.travel(attack_animation)
+	#damaging.damage = 2
+	#next_state = attack_state
+	#playback.travel(attack_animation)
 	
 
 func skill():
@@ -315,7 +145,7 @@ func skill():
 	#		Global.attack_set_state = false
 	#GameManager.attack_set_state = !GameManager.attack_set_state 
 	GameManager.mana_player_one -= 40
-	damaging_3.damage = 3
+	#damaging_3.damage = 3
 	next_state = skill_state
 	playback.travel(skill_animation)
 	#GameManager.save()
@@ -328,7 +158,7 @@ func skill2():
 	#elif Global.attack_set_state == true:
 	#		Global.attack_set_state = false
 	GameManager.mana_player_one -= 40
-	damaging_4.damage = 5
+	#damaging_4.damage = 5
 	next_state = skill_state
 	playback.travel(skill_animation2)
 	#GameManager.save()
@@ -353,7 +183,7 @@ func skill4():
 	#elif Global.attack_set_state == true:
 	#		Global.attack_set_state = false
 	GameManager.mana_player_one -= 40
-	damaging_5.damage = 4
+	#damaging_5.damage = 4
 	next_state = skill_state
 	playback.travel(skill_animation4)
 	#GameManager.save()

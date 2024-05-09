@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var Projectile = preload("res://ProjectilesEnemy.tscn")
+@onready var Projectile = preload("res://Old/ProjectilesEnemy.tscn")
 var held_item = null
 signal throw_item()
 @onready var marker_2d = $Sprite2D/Marker2D

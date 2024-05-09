@@ -1,4 +1,4 @@
-extends "res://enemy_walking11.gd"
+extends "res://Old/enemy_walking11.gd"
 
 
 func _process(_delta):

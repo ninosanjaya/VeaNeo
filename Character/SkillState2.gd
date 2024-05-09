@@ -1,5 +1,6 @@
 extends State
 
+#Skill 1 evil
 class_name Skill2
 
 @export var return_state : State

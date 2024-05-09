@@ -233,7 +233,7 @@ func death():
 		Global.death = true	
 		Input.start_joy_vibration(0,0.8,0.2,1)
 		#reset.start()
-		get_tree().change_scene_to_file("res://gameover.tscn")
+		get_tree().change_scene_to_file("res://Old/gameover.tscn")
 		##GameManager.save()
 		
 		

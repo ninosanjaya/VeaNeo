@@ -2,10 +2,10 @@ extends Node2D
 
 var game_start = false
 
-const AL = preload("res://move_arrow_left.tscn")
-const AU = preload("res://move_arrow_up.tscn")	
-const AD = preload("res://move_arrow_down.tscn")	
-const AR = preload("res://move_arrow_right.tscn")	
+const AL = preload("res://Old/move_arrow_left.tscn")
+const AU = preload("res://Old/move_arrow_up.tscn")	
+const AD = preload("res://Old/move_arrow_down.tscn")	
+const AR = preload("res://Old/move_arrow_right.tscn")	
 
 @onready var position1 = $Create/Marker2D.global_position
 @onready var position2 = $Create/Marker2D2.global_position

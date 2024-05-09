@@ -1,4 +1,4 @@
-extends "res://Pero_trap1.gd"
+extends "res://Old/Pero_trap1.gd"
 @onready var perotraps = $"../perotraps"
 
 

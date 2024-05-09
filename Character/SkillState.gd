@@ -1,6 +1,6 @@
 extends State
 
-class_name Skill
+#class_name Skill
 
 @export var return_state : State
 @export var return_animation_node : String = "move"

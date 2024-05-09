@@ -40,7 +40,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var damageable : Damageable
 
 var direction_player 
-const HIT_EFFECTS = preload("res://hit_effects.tscn")
+const HIT_EFFECTS = preload("res://Old/hit_effects.tscn")
 
 #@onready var check = $Check
 var entered = false
@@ -206,7 +206,7 @@ func _spawn_hit_effect() -> void:
 	add_child(hit_effect)
 
 var held_item = null
-@onready var PROJECTILE_BOUNCE_ENEMY = preload("res://projectile_bounce_enemy.tscn")
+@onready var PROJECTILE_BOUNCE_ENEMY = preload("res://Old/projectile_bounce_enemy.tscn")
 @onready var held_item_position = $Sprite2D/Marker2D
 signal throw_item()
 

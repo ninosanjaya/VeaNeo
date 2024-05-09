@@ -1,6 +1,6 @@
 extends Node2D
 
-const NOVEL = preload("res://novel.tscn")
+const NOVEL = preload("res://Old/novel.tscn")
 @onready var indicator_4 = $Indicator4
 @onready var player = $"../Player"
 @onready var player_2 = $"../Player2"

@@ -1,4 +1,4 @@
-extends "res://Pero_trap1.gd"
+extends "res://Old/Pero_trap1.gd"
 
 
 # Called when the node enters the scene tree for the first time.

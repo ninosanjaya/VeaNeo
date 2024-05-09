@@ -39,7 +39,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var damageable : Damageable
 
 
-const HIT_EFFECTS = preload("res://hit_effects.tscn")
+const HIT_EFFECTS = preload("res://Old/hit_effects.tscn")
 
 func _ready():
 	animation_tree.active = true

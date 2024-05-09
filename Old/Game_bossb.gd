@@ -225,9 +225,9 @@ func _on_dialogue_box_dialogue_ended():
 		GameManager.key_item3 = true
 		GameManager.skill_available[3] = 1.3
 		GameManager.player_location = 1
-		Global.next_scene = "res://world.tscn"
+		Global.next_scene = "res://Old/world.tscn"
 		#get_tree().change_scene_to_file("res://Loading.tscn")
-		get_tree().change_scene_to_packed(preload("res://loading.tscn"))
+		get_tree().change_scene_to_packed(preload("res://Old/loading.tscn"))
 		#get_tree().change_scene_to_file("res://world.tscn")
 			#Door1_pos
 		GameManager.last_position = Vector2(2339, 280) #door 3

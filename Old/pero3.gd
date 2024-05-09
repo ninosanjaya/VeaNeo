@@ -42,18 +42,18 @@ var entered = false
 #const TILESET_1 = preload("res://tileset_1.png")
 #const TILESET_2 = preload("res://tileset_2.png")
 const TEXTURES = [
-	"res://tileset_1.png",
-	"res://tileset_2.png"
+	"res://Old/tileset_1.png",
+	"res://Old/tileset_2.png"
 ]
 
 const TEXTURES2 = [
-	"res://backgrounds_inside_V1.png",
-	"res://backgrounds_inside_V2.png"
+	"res://Old/backgrounds_inside_V1.png",
+	"res://Old/backgrounds_inside_V2.png"
 ]
 
 const TEXTURES3 = [
-	"res://backgrounds_inside_first_V0.png",
-	"res://backgrounds_inside_first_V02.png"
+	"res://Old/backgrounds_inside_first_V0.png",
+	"res://Old/backgrounds_inside_first_V02.png"
 ]
 
 var switch_tile = 0

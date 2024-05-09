@@ -291,7 +291,6 @@ shape = SubResource("RectangleShape2D_pna02")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Korone"]
 stream = ExtResource("10_yh7pq")
 volume_db = -50.0
-bus = &"SFX"
 
 [node name="Timer" type="Timer" parent="Korone"]
 wait_time = 10.0
@@ -827,7 +826,6 @@ offset_right = -1.0
 [node name="fanfare" type="AudioStreamPlayer" parent="UI"]
 stream = ExtResource("19_sheua")
 volume_db = -50.0
-bus = &"SFX"
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("6_lmkev")
@@ -1096,12 +1094,10 @@ position = Vector2(-451, -78)
 stream = ExtResource("34_n224e")
 volume_db = -60.0
 autoplay = true
-bus = &"BGM"
 
 [node name="sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("37_q0xqa")
 volume_db = -50.0
-bus = &"SFX"
 
 [connection signal="body_entered" from="BackgroundsInsideFirstV1/prisoner/Area2D5" to="BackgroundsInsideFirstV1/prisoner" method="_on_area_2d_5_body_entered"]
 [connection signal="body_exited" from="BackgroundsInsideFirstV1/prisoner/Area2D5" to="BackgroundsInsideFirstV1/prisoner" method="_on_area_2d_5_body_exited"]

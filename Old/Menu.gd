@@ -45,7 +45,7 @@ func _ready():
 
 func _on_play_pressed():
 	sfx.playing = true
-	get_tree().change_scene_to_file("res://intro.tscn")
+	get_tree().change_scene_to_file("res://Old/intro.tscn")
 	#Cutscene intro world the -> world.tscn
 
 func _on_continue_pressed():
@@ -55,21 +55,21 @@ func _on_continue_pressed():
 	GameManager.load_data()
 	#print(GameManager.player_location)
 	if GameManager.player_location == 1:
-		Global.next_scene = "res://world.tscn"
+		Global.next_scene = "res://Old/world.tscn"
 		#get_tree().change_scene_to_file("res://Loading.tscn")
-		get_tree().change_scene_to_packed(load("res://loading.tscn"))
+		get_tree().change_scene_to_packed(load("res://Old/loading.tscn"))
 	elif GameManager.player_location == 2:
-		Global.next_scene = "res://world_2.tscn"
-		get_tree().change_scene_to_packed(load("res://loading.tscn"))
+		Global.next_scene = "res://Old/world_2.tscn"
+		get_tree().change_scene_to_packed(load("res://Old/loading.tscn"))
 	elif GameManager.player_location == 3:
-		Global.next_scene = "res://world_3.tscn"
-		get_tree().change_scene_to_packed(load("res://loading.tscn"))
+		Global.next_scene = "res://Old/world_3.tscn"
+		get_tree().change_scene_to_packed(load("res://Old/loading.tscn"))
 	elif GameManager.player_location == 4:
-		Global.next_scene = "res://world_4.tscn"
-		get_tree().change_scene_to_packed(load("res://loading.tscn"))
+		Global.next_scene = "res://Old/world_4.tscn"
+		get_tree().change_scene_to_packed(load("res://Old/loading.tscn"))
 	elif GameManager.player_location == 5:
-		Global.next_scene = "res://world_F.tscn"
-		get_tree().change_scene_to_packed(load("res://loading.tscn"))
+		Global.next_scene = "res://Old/world_F.tscn"
+		get_tree().change_scene_to_packed(load("res://Old/loading.tscn"))
 		
 	#print(GameManager.variable4)
 

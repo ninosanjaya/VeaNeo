@@ -87,7 +87,24 @@ func _enter_tree():
 
 	# setup dialog panel
 	custom_minimum_size = Vector2(256, 128)
-
+	
+	# setup portrait image
+	var margin_container2 := MarginContainer.new()
+	add_child(margin_container2)
+	margin_container2.set_anchors_preset(Control.PRESET_FULL_RECT)
+	margin_container2.offset_left = 0 #Change 0 - 400  to shift character sprite location
+	margin_container2.offset_top = 100 
+	margin_container2.offset_right = -10
+	margin_container2.offset_bottom = 250
+	var _hbox_container2 = HBoxContainer.new()
+	margin_container2.add_child(_hbox_container2)
+	portrait = TextureRect.new()
+	_hbox_container2.add_child(portrait)
+	portrait.texture = sample_portrait
+	portrait.expand_mode = TextureRect.EXPAND_FIT_WIDTH
+	portrait.size_flags_stretch_ratio = 0
+	
+	
 	# setup containers
 	var margin_container := MarginContainer.new()
 	add_child(margin_container)
@@ -101,11 +118,11 @@ func _enter_tree():
 	margin_container.add_child(_hbox_container)
 
 	# setup portrait image
-	portrait = TextureRect.new()
-	_hbox_container.add_child(portrait)
-	portrait.texture = sample_portrait
-	portrait.expand_mode = TextureRect.EXPAND_FIT_WIDTH
-	portrait.size_flags_stretch_ratio = 0
+	#portrait = TextureRect.new()
+	#_hbox_container.add_child(portrait)
+	#portrait.texture = sample_portrait
+	#portrait.expand_mode = TextureRect.EXPAND_FIT_WIDTH
+	#portrait.size_flags_stretch_ratio = 0
 
 
 	_vbox_container = VBoxContainer.new()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://x73u5l2y8co4"]
+[gd_scene load_steps=88 format=3 uid="uid://x73u5l2y8co4"]
 
 [ext_resource type="Script" path="res://Character/player.gd" id="1_4sfbx"]
 [ext_resource type="Material" uid="uid://dpuhlrxcqb8yv" path="res://Old/whiten_material.tres" id="2_hu2qn"]
@@ -13,18 +13,6 @@
 [ext_resource type="Script" path="res://Character/SkillState.gd" id="9_h0svf"]
 [ext_resource type="Script" path="res://Character/Defense2.gd" id="11_6ar1b"]
 [ext_resource type="Script" path="res://Character/HitState.gd" id="11_rkc3j"]
-[ext_resource type="Script" path="res://Character/Damaging.gd" id="12_pc1gl"]
-[ext_resource type="Script" path="res://Character/CollisionShape2D_damage.gd" id="13_qpgcn"]
-[ext_resource type="Script" path="res://Character/CollisionShape2D2.gd" id="15_814pv"]
-[ext_resource type="Script" path="res://Character/CollisionShape2D3.gd" id="16_3dpn1"]
-[ext_resource type="Script" path="res://Character/CollisionShape2D4.gd" id="17_tp3r5"]
-[ext_resource type="AudioStream" uid="uid://dc8j1bdduk42j" path="res://bgm/Fuwa_fluff.wav" id="19_yd4ed"]
-[ext_resource type="AudioStream" uid="uid://cgktyt0rw5nql" path="res://bgm/Fuwa_rawr.wav" id="20_xo8p5"]
-[ext_resource type="AudioStream" uid="uid://db2h024f15mxy" path="res://bgm/BAUBAU.wav" id="21_03nst"]
-[ext_resource type="AudioStream" uid="uid://btcdmhr2fmydd" path="res://bgm/shiori_scissor_blade.mp3" id="22_rp4g8"]
-[ext_resource type="AudioStream" uid="uid://co7fp6g7n7x2n" path="res://bgm/Nerisa_cawcaw.wav" id="23_6g0px"]
-[ext_resource type="AudioStream" uid="uid://wnm0lnu1nox0" path="res://bgm/biboo_rock_falling.mp3" id="24_epn55"]
-[ext_resource type="AudioStream" uid="uid://b4fjvmhcjvlv8" path="res://bgm/fuwamoco_hit.wav" id="25_46f4u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0sv6"]
 size = Vector2(13, 27.5)
@@ -38,58 +26,46 @@ length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Damaging:monitoring")
+tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false, true, false]
+"values": [ExtResource("3_rqiq5")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:texture")
+tracks/1/path = NodePath(".:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_rqiq5")]
+"values": [10]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath(".:hframes")
+tracks/2/path = NodePath(".:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [10]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [60, 61, 62, 64]
 }
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("..")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0.2, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
@@ -99,18 +75,6 @@ tracks/4/keys = {
 "args": [],
 "method": &"slash_off"
 }]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../attack:playing")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0.1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_40rxl"]
@@ -119,58 +83,46 @@ length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Damaging:monitoring")
+tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false, true, false]
+"values": [ExtResource("3_rqiq5")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:texture")
+tracks/1/path = NodePath(".:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_rqiq5")]
+"values": [10]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath(".:hframes")
+tracks/2/path = NodePath(".:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [10]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [64, 65, 66, 68]
 }
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("..")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0.2, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
@@ -180,18 +132,6 @@ tracks/4/keys = {
 "args": [],
 "method": &"slash_off"
 }]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../attack:playing")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0.1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_v100w"]
@@ -275,18 +215,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [50, 51, 52, 53, 54, 55, 56, 57]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../defense:playing")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.2),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_k8y0g"]
@@ -409,18 +337,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [90, 91, 92]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../hit:playing")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_8wchg"]
@@ -587,30 +503,6 @@ tracks/2/keys = {
 "update": 1,
 "values": [40, 41, 42, 43, 44, 45, 46, 47, 48, 49]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Damaging2:monitoring")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.3, 0.4, 0.9, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [false, true, true, false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../baubau:playing")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_2hiyd"]
 resource_name = "skill2"
@@ -650,30 +542,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [30, 31, 32, 37]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Damaging3:monitoring")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../shiori:playing")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_e4vqt"]
@@ -729,18 +597,6 @@ tracks/3/keys = {
 "method": &"emit_signal"
 }]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../nerisa:playing")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_7lc47"]
 resource_name = "skill4"
@@ -780,30 +636,6 @@ tracks/2/keys = {
 "update": 1,
 "values": [10, 11, 12, 13, 14, 15, 16, 17, 18]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Damaging4:monitoring")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.4, 0.5, 0.7, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [false, true, true, false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../biboo:playing")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_ftpum"]
 resource_name = "skill4_2"
@@ -842,30 +674,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [10, 11, 12, 13]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Damaging4:monitoring")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.2, 0.3, 0.5, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [false, true, true, false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../biboo:playing")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r0o1w"]
@@ -1066,18 +874,6 @@ states/skill4_2/position = Vector2(326, 81.531)
 transitions = ["Start", "move", SubResource("AnimationNodeStateMachineTransition_jh43o"), "move", "jump", SubResource("AnimationNodeStateMachineTransition_20402"), "jump", "move", SubResource("AnimationNodeStateMachineTransition_hn7ka"), "move", "dash", SubResource("AnimationNodeStateMachineTransition_vg0hw"), "dash", "move", SubResource("AnimationNodeStateMachineTransition_2gq5w"), "move", "attack1", SubResource("AnimationNodeStateMachineTransition_3syas"), "attack1", "move", SubResource("AnimationNodeStateMachineTransition_kk51l"), "attack1", "attack2", SubResource("AnimationNodeStateMachineTransition_dncle"), "attack2", "move", SubResource("AnimationNodeStateMachineTransition_hgwof"), "jump", "dash", SubResource("AnimationNodeStateMachineTransition_neni7"), "move", "skill", SubResource("AnimationNodeStateMachineTransition_o4c84"), "skill", "move", SubResource("AnimationNodeStateMachineTransition_i7rma"), "move", "interact", SubResource("AnimationNodeStateMachineTransition_lcvt4"), "interact", "move", SubResource("AnimationNodeStateMachineTransition_oxsvy"), "move", "skill2", SubResource("AnimationNodeStateMachineTransition_ukhjb"), "skill2", "move", SubResource("AnimationNodeStateMachineTransition_huo7x"), "move", "skill3", SubResource("AnimationNodeStateMachineTransition_ci6nq"), "skill3", "move", SubResource("AnimationNodeStateMachineTransition_5vsup"), "move", "skill4", SubResource("AnimationNodeStateMachineTransition_d7nhv"), "skill4", "move", SubResource("AnimationNodeStateMachineTransition_03wm7"), "move", "hit", SubResource("AnimationNodeStateMachineTransition_cq81e"), "hit", "move", SubResource("AnimationNodeStateMachineTransition_eevca"), "hit", "dead", SubResource("AnimationNodeStateMachineTransition_g7t11"), "dead", "End", SubResource("AnimationNodeStateMachineTransition_66isx"), "defensev2", "move", SubResource("AnimationNodeStateMachineTransition_3jg5q"), "move", "defensev2", SubResource("AnimationNodeStateMachineTransition_c43dr"), "move", "dogidle", SubResource("AnimationNodeStateMachineTransition_bejqh"), "dogidle", "move", SubResource("AnimationNodeStateMachineTransition_sb10l"), "move", "dogwalk", SubResource("AnimationNodeStateMachineTransition_xfw40"), "dogwalk", "move", SubResource("AnimationNodeStateMachineTransition_vguh3"), "dogidle", "dogwalk", SubResource("AnimationNodeStateMachineTransition_rt46r"), "dogwalk", "dogidle", SubResource("AnimationNodeStateMachineTransition_a3ews"), "jump", "skill4_2", SubResource("AnimationNodeStateMachineTransition_fipai"), "skill4_2", "move", SubResource("AnimationNodeStateMachineTransition_stf6q")]
 graph_offset = Vector2(18.855, 27.531)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h1ccf"]
-size = Vector2(40.375, 49.9844)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fcoa"]
-size = Vector2(79.75, 55)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fm8dl"]
-size = Vector2(68, 46)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6apq"]
-size = Vector2(79, 56)
-
 [node name="Player0" type="CharacterBody2D" node_paths=PackedStringArray("hit_state", "attack_state", "defense_state", "jump_state")]
 collision_mask = 3
 script = ExtResource("1_4sfbx")
@@ -1223,88 +1019,6 @@ text = "State: "
 script = ExtResource("7_exo6w")
 state_machine = NodePath("../CharacterStateMachine")
 
-[node name="Damaging" type="Area2D" parent="." node_paths=PackedStringArray("player", "facing_shape")]
-visible = false
-monitoring = false
-script = ExtResource("12_pc1gl")
-player = NodePath("..")
-facing_shape = NodePath("CollisionShape2D")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Damaging"]
-position = Vector2(23.8125, -26.0078)
-shape = SubResource("RectangleShape2D_h1ccf")
-script = ExtResource("13_qpgcn")
-facing_left_position = Vector2(17, -20)
-facing_right_position = Vector2(-17, -20)
-
-[node name="Damaging2" type="Area2D" parent="." node_paths=PackedStringArray("player", "facing_shape")]
-visible = false
-monitoring = false
-script = ExtResource("12_pc1gl")
-player = NodePath("..")
-facing_shape = NodePath("../Damaging/CollisionShape2D")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Damaging2"]
-position = Vector2(44.125, -30.5156)
-shape = SubResource("RectangleShape2D_6fcoa")
-script = ExtResource("15_814pv")
-facing_left_position2 = Vector2(44, -30)
-facing_right_position2 = Vector2(-44, -30)
-
-[node name="Damaging3" type="Area2D" parent="." node_paths=PackedStringArray("player", "facing_shape")]
-visible = false
-script = ExtResource("12_pc1gl")
-player = NodePath("..")
-facing_shape = NodePath("../Damaging/CollisionShape2D")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Damaging3"]
-position = Vector2(24, -24)
-shape = SubResource("RectangleShape2D_fm8dl")
-script = ExtResource("16_3dpn1")
-facing_left_position3 = Vector2(24, -24)
-facing_right_position3 = Vector2(-24, -24)
-
-[node name="Damaging4" type="Area2D" parent="." node_paths=PackedStringArray("player", "facing_shape")]
-visible = false
-script = ExtResource("12_pc1gl")
-player = NodePath("..")
-facing_shape = NodePath("../Damaging/CollisionShape2D")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Damaging4"]
-position = Vector2(-2.5, -27)
-shape = SubResource("RectangleShape2D_a6apq")
-script = ExtResource("17_tp3r5")
-facing_left_position4 = Vector2(2, -27)
-facing_right_position4 = Vector2(-2, -27)
-
-[node name="defense" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("19_yd4ed")
-volume_db = -50.0
-
-[node name="attack" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("20_xo8p5")
-volume_db = -50.0
-
-[node name="baubau" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("21_03nst")
-volume_db = -50.0
-
-[node name="shiori" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("22_rp4g8")
-volume_db = -50.0
-
-[node name="nerisa" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("23_6g0px")
-volume_db = -50.0
-
-[node name="biboo" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("24_epn55")
-volume_db = -50.0
-
-[node name="hit" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("25_46f4u")
-volume_db = -50.0
-
 [connection signal="throw_item_Nerissa" from="." to="." method="_on_throw_item_nerissa"]
 [connection signal="timeout" from="reset" to="." method="_on_reset_timeout"]
 [connection signal="timeout" from="AttackTimerPP" to="." method="_on_attack_timer_pp_timeout"]
@@ -1317,7 +1031,3 @@ volume_db = -50.0
 [connection signal="timeout" from="CharacterStateMachine/Skill/SkillTimer" to="CharacterStateMachine/Ground" method="_on_skill_timer_timeout"]
 [connection signal="timeout" from="CharacterStateMachine/Skill/SkillTimer" to="CharacterStateMachine/Skill" method="_on_skill_timer_timeout"]
 [connection signal="timeout" from="CharacterStateMachine/Defense2/DefenseTimer" to="CharacterStateMachine/Defense2" method="_on_defense_timer_timeout"]
-[connection signal="body_entered" from="Damaging" to="Damaging" method="_on_body_entered"]
-[connection signal="body_entered" from="Damaging2" to="Damaging2" method="_on_body_entered"]
-[connection signal="body_entered" from="Damaging3" to="Damaging3" method="_on_body_entered"]
-[connection signal="body_entered" from="Damaging4" to="Damaging4" method="_on_body_entered"]

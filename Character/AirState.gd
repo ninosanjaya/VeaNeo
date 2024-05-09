@@ -16,7 +16,7 @@ var has_double_jumped = false
 @export var attack_state : State
 @export var attack_animation : String = "attack1"
 
-@onready var damaging_4 = $"../../Damaging4"
+#@onready var damaging_4 = $"../../Damaging4"
 @export var skill_state : State
 @export var skill_animation4 : String = "skill4_2"
 

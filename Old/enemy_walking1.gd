@@ -1,4 +1,4 @@
-extends "res://enemy_walking.gd"
+extends "res://Old/enemy_walking.gd"
 
 
 ##const SPEED = 300.0

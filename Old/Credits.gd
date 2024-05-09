@@ -104,7 +104,7 @@ func finish():
 	if not finished:
 		finished = true
 		# This is called when the credits finish and returns to the main menu
-		get_tree().change_scene_to_file("res://menu.tscn")
+		get_tree().change_scene_to_file("res://Old/menu.tscn")
 
 var one = false
 

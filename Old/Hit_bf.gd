@@ -22,7 +22,7 @@ extends State
 #@onready var timer_2 = $Timer2
 #@onready var animation_player_2 = $"../../AnimationPlayer2"
 
-const HIT_EFFECTS = preload("res://hit_effects.tscn")
+const HIT_EFFECTS = preload("res://Old/hit_effects.tscn")
 @onready var hit = $"../../hit"
 
 signal hit_state

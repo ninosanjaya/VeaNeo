@@ -29,7 +29,7 @@ var Pos1 : Vector2
 
 @onready var backgrounds_inside_first_v_2 = $BackgroundsInsideFirstV2
 #var new_texture = preload("res://Assets/Passport1Closed.png")
-const BACKGROUNDS_INSIDE_V_2 = preload("res://backgrounds_inside_V2.png")
+const BACKGROUNDS_INSIDE_V_2 = preload("res://Old/backgrounds_inside_V2.png")
 
 #func _enter_tree():
 #	if GameManager.last_position:

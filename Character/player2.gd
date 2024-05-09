@@ -73,6 +73,8 @@ var cutscene : bool = false
 #@export var Talk_time : bool = false
 @onready var mococo = $mococo
 
+#var control_self = false
+
 func _ready():
 	animation_tree.active = true
 	#print(player.health_player)
@@ -93,6 +95,7 @@ func _physics_process(delta):
 	#Talk_time = Global.talking
 	#print(Talk_time)
 	#print(direction)
+	
 	var input_axis = Input.get_axis("left", "right")
 	direction = Input.get_vector("left", "right", "up", "down")
 	# Control whether to move or not to move
@@ -103,7 +106,7 @@ func _physics_process(delta):
 	apply_air_resistance(input_axis, delta)
 	apply_friction(input_axis,delta)
 	
-	if direction.x != 0 && state_machine.check_if_can_move() && normal_speed == true && can_attack2 == true && Global.talking == false && Global.enemy_knockback == false:
+	if direction.x != 0 && state_machine.check_if_can_move() && normal_speed == true && can_attack2 == true && Global.talking == false && Global.enemy_knockback == false && Global.control_metal == false:
 		velocity.x = direction.x * SPEED
 		
 	#elif direction.x != 0 && state_machine.check_if_can_move() && Input.is_action_pressed("dash") :
@@ -232,13 +235,14 @@ func death():
 		Global.death = true	
 		Input.start_joy_vibration(0,0.8,0.2,1)
 		#reset.start()
-		get_tree().change_scene_to_file("res://gameover.tscn")
+		get_tree().change_scene_to_file("res://Old/gameover.tscn")
 		##GameManager.save()
 
 func handle_atk():
 	
 	#sneeze attackv2
 	if (Input.is_action_pressed("skill")) and (can_attack2 == true) and (GameManager.attack_set_state == true) and Global.talking == false and Global.dog == false:
+		#control metal change on metal script object
 		#spawn_rock()
 		#state_machine.current_state = attack_state
 		
@@ -249,7 +253,7 @@ func handle_atk():
 		#state_machine.current_state.can_move = false
 		
 	#attack1&2
-	if (Input.is_action_pressed("attack"))  and (can_attack2 == true) and (GameManager.attack_set_state == true) and Global.talking == false and Global.dog == false:
+	if (Input.is_action_pressed("attack"))  and (can_attack2 == true) and (GameManager.attack_set_state == true) and Global.talking == false and Global.dog == false and Global.control_metal == false:
 		state_machine.current_state = attack_state
 		playback.travel(attack_animation)
 		attack_timer_ppp.start()

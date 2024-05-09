@@ -14,7 +14,7 @@ extends Node2D
 var Pos1 : Vector2 
 
 var save_path = "user://variable.save"
-const PON_DE_RING = preload("res://pon_de_ring.tscn")
+const PON_DE_RING = preload("res://Old/pon_de_ring.tscn")
 @onready var color_rect = $UI/ColorRect
 @onready var camera_2d = $Camera2D
 
@@ -24,7 +24,7 @@ const PON_DE_RING = preload("res://pon_de_ring.tscn")
 
 #var save_path = "user://variable.save"
 var segments = [
-	preload("res://A.tscn")
+	preload("res://Old/A.tscn")
 	
 ]
 
@@ -149,7 +149,7 @@ func _process(delta):
 		
 		
 	elif Global.death == true:
-		get_tree().change_scene_to_file("res://world.tscn")
+		get_tree().change_scene_to_file("res://Old/world.tscn")
 			#Door1_pos
 			#GameManager.last_position = Vector2(2444, -263) #door 1
 			#GameManager.last_position = Vector2(2437, -7) #door 2
@@ -159,7 +159,7 @@ func _process(delta):
 	
 	elif Global.end == true:
 		print("end moving")
-		get_tree().change_scene_to_file("res://outro.tscn")
+		get_tree().change_scene_to_file("res://Old/outro.tscn")
 
 	
 	if stop == false:

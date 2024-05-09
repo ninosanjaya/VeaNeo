@@ -1,4 +1,4 @@
-extends "res://enemy_walking4.gd"
+extends "res://Old/enemy_walking4.gd"
 
 
 

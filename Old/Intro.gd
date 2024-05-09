@@ -92,9 +92,9 @@ func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "intro1":
 	#		animation_player.play("intro2")
 	#elif anim_name == "intro2":
-		Global.next_scene = "res://world.tscn"
+		Global.next_scene = "res://Old/world.tscn"
 		#get_tree().change_scene_to_file("res://Loading.tscn")
-		get_tree().change_scene_to_packed(load("res://loading.tscn"))
+		get_tree().change_scene_to_packed(load("res://Old/loading.tscn"))
 		#get_tree().change_scene_to_file("res://world.tscn")
 		GameManager.health_player_one = 3
 		GameManager.mana_player_one = 100

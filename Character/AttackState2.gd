@@ -1,6 +1,6 @@
 extends State
 
-
+#Attack 1 evil
 class_name Attackv2
 
 @export var return_state : State

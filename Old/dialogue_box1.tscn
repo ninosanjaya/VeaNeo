@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://b08854f6nm01h"]
 
-[ext_resource type="FontFile" uid="uid://06djxm4iqomb" path="res://Old/PixelGameFont.ttf" id="1_8gnoj"]
+[ext_resource type="FontFile" uid="uid://06djxm4iqomb" path="res://UIs/PixelGameFont.ttf" id="1_8gnoj"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="2_8b4i6"]
 [ext_resource type="Resource" uid="uid://urxlbil6noly" path="res://Old/intro_dialogue.tres" id="3_whu6w"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="4_ioigq"]

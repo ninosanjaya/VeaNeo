@@ -10,15 +10,15 @@ extends Node2D
 @onready var P1 = get_node("Player")
 @onready var P2 = get_node("Player2")
 @onready var switch_timer = $SwitchTimer
-const PON_DE_RING = preload("res://pon_de_ring.tscn")
-const PON_DE_RING2 = preload("res://pon_de_ring.tscn")
-const PON_DE_RING3 = preload("res://pon_de_ring.tscn")
-const PON_DE_RING4 = preload("res://pon_de_ring.tscn")
-const PON_DE_RING5 = preload("res://pon_de_ring.tscn")
-const PON_DE_RING6 = preload("res://pon_de_ring.tscn")
-const PON_DE_RING7 = preload("res://pon_de_ring.tscn")
-const PON_DE_RING8 = preload("res://pon_de_ring.tscn")
-const PON_DE_RING9 = preload("res://pon_de_ring.tscn")
+const PON_DE_RING = preload("res://Old/pon_de_ring.tscn")
+const PON_DE_RING2 = preload("res://Old/pon_de_ring.tscn")
+const PON_DE_RING3 = preload("res://Old/pon_de_ring.tscn")
+const PON_DE_RING4 = preload("res://Old/pon_de_ring.tscn")
+const PON_DE_RING5 = preload("res://Old/pon_de_ring.tscn")
+const PON_DE_RING6 = preload("res://Old/pon_de_ring.tscn")
+const PON_DE_RING7 = preload("res://Old/pon_de_ring.tscn")
+const PON_DE_RING8 = preload("res://Old/pon_de_ring.tscn")
+const PON_DE_RING9 = preload("res://Old/pon_de_ring.tscn")
 
 #@export var PON_DE_RING : PackedScene
 @onready var dialogue_box = $UI/DialogueBox

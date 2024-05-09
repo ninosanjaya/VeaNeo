@@ -29,9 +29,9 @@ func _process(_delta):
 	#print(sprite_2d_4.global_position)
 	#print(GameManager.final)
 	if GameManager.final == true:
-			Global.next_scene = "res://world_F.tscn"
+			Global.next_scene = "res://Old/world_F.tscn"
 		#get_tree().change_scene_to_file("res://Loading.tscn")
-			get_tree().change_scene_to_packed(preload("res://loading.tscn"))
+			get_tree().change_scene_to_packed(preload("res://Old/loading.tscn"))
 			#get_tree().change_scene_to_file("res://world_F.tscn")
 			GameManager.last_position = Vector2(100,16) #position of next world door
 			GameManager.final = false

@@ -21,7 +21,7 @@ func _process(_delta):
 		#GameManager.save()
 		if Input.is_action_just_pressed("attack"):
 			#GameManager.final = false
-			get_tree().change_scene_to_file("res://world.tscn")
+			get_tree().change_scene_to_file("res://Old/world.tscn")
 			#Door1_pos
 			#GameManager.last_position = Vector2(2444, -263) #door 1
 			#GameManager.last_position = Vector2(2437, -7) #door 2

@@ -1,10 +1,11 @@
 extends Node2D
 
 
-#1. (biology-manouver) able to climb wall/roof or able to dig
-#2. (physic-puzzle) turn on electricity or grab/leviate metal
-#3. (chemistry-puzzle) x-ray or syringe grab liquid/gas
-#4. Attack physic/biology/chemistry 
+#(DONE) 1. (biology-manouver) able to climb wall/roof or able to dig
+#(DONE?) able to control more than 1 metal? (electricity just switches) 2. (physic-puzzle) turn on electricity or grab/leviate metal
+#(DONE) liquid like switch with levels & just spray when on character. 3. (chemistry-puzzle) x-ray or syringe grab liquid/gas
+#4. Attack meelee physic/biology
+#4.2. add ground pound for all? biology only?
 #5. Attack range evil physic/biology
 #6. Defense good physic/biology
 #7. Buff/instant kill chemistry

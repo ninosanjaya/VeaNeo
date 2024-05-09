@@ -1,5 +1,6 @@
 extends State
 
+#Attackv 1 evil
 class_name Attackv22
 
 @export var return_animation_node2 : String = "move"

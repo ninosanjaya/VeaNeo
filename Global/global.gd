@@ -73,6 +73,9 @@ var end = false
 
 var can_skill : bool = true
 
+#VEA NEO:
+var control_metal = false
+
 
 #scenes
 var next_scene = ""

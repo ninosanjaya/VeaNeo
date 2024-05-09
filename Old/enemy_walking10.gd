@@ -1,4 +1,4 @@
-extends "res://enemy_walking8_0.gd"
+extends "res://Old/enemy_walking8_0.gd"
 
 func _process(_delta):
 	# Add the gravity.

@@ -1,6 +1,6 @@
 extends State
 
-
+#Hit 1 evil
 class_name HitState2P
 
 @export var ground_state : State

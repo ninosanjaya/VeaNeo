@@ -25,9 +25,9 @@ func _process(_delta):
 		sprite_2d_2.material.set_shader_parameter("outline_select", true)
 		if Input.is_action_just_pressed("attack") && GameManager.key_item2 == false:
 			GameManager.player_location = 3
-			Global.next_scene = "res://world_3.tscn"
+			Global.next_scene = "res://Old/world_3.tscn"
 		#get_tree().change_scene_to_file("res://Loading.tscn")
-			get_tree().change_scene_to_packed(preload("res://loading.tscn"))
+			get_tree().change_scene_to_packed(preload("res://Old/loading.tscn"))
 			#get_tree().change_scene_to_file("res://world_3.tscn")
 			GameManager.last_position = Vector2(12,16) #position of next world door
 			#GameManager.last_position = Vector2(2435,-7) #position of next world door

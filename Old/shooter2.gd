@@ -1,4 +1,4 @@
-extends "res://Shooter.gd"
+extends "res://Old/Shooter.gd"
 
 @onready var player = $"../Player"
 @onready var player_2 = $"../Player2"

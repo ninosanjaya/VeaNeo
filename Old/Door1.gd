@@ -25,9 +25,9 @@ func _process(_delta):
 		if Input.is_action_just_pressed("attack") && GameManager.key_item1 == false:
 			
 			GameManager.player_location = 2
-			Global.next_scene = "res://world_2.tscn"
+			Global.next_scene = "res://Old/world_2.tscn"
 		#get_tree().change_scene_to_file("res://Loading.tscn")
-			get_tree().change_scene_to_packed(preload("res://loading.tscn"))
+			get_tree().change_scene_to_packed(preload("res://Old/loading.tscn"))
 			#get_tree().change_scene_to_file("res://world_2.tscn")
 			GameManager.last_position = Vector2(200,-5) #position of next world door
 			#GameManager.last_position = Vector2(2448,-263) #position of next world door

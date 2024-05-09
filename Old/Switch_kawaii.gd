@@ -8,9 +8,9 @@ extends Area2D
 
 
 const TEXTURES = [
-	"res://tilemap_packed.png", 
-	"res://tilemap_packed_edited.png",
-	"res://tileset_1.png"
+	"res://Old/tilemap_packed.png", 
+	"res://Old/tilemap_packed_edited.png",
+	"res://Old/tileset_1.png"
 ]
 
 var switch_tile = 0
