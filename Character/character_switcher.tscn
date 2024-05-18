@@ -26,12 +26,15 @@ position = Vector2(149, 14)
 
 [node name="Player1_2" parent="." groups=["Player"] instance=ExtResource("6_sofmd")]
 position = Vector2(39, 70)
+SPEED = 100.0
 
 [node name="Player2_2" parent="." instance=ExtResource("7_y1x87")]
 position = Vector2(90, 73)
+SPEED = 100.0
 
 [node name="Player3_2" parent="." instance=ExtResource("8_5j3kw")]
 position = Vector2(143, 76)
+SPEED = 100.0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5

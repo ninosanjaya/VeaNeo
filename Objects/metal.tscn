@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dinjot2fhakgr"]
+
+[ext_resource type="Script" path="res://Objects/metal.gd" id="1_o36r7"]
+[ext_resource type="Texture2D" uid="uid://mqyg54ketta1" path="res://art2/barrel.png" id="2_eo7hd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4c6u"]
+size = Vector2(33, 32)
+
+[node name="Metal" type="CharacterBody2D"]
+script = ExtResource("1_o36r7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_eo7hd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 0)
+shape = SubResource("RectangleShape2D_m4c6u")

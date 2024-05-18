@@ -5,6 +5,7 @@ extends State
 @onready var enemy_walking = $"../.."
 @onready var character_state_machine = $".."
 @export var hit_state : State
+@onready var damageable = $"../../Damageable"
 
 #@onready var found_wall = is_on_wall()
 
@@ -19,9 +20,16 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func state_process(_delta):
-	playback.travel(walk_animation)
-	enemy_walking.walk33 = true #walk33 true move
-	enemy_walking.walk22 = false #walk22 false attack player, walk22 true stop
+
+	
+	#if (damageable.health > 0):
+		playback.travel(walk_animation)
+		enemy_walking.walk33 = true #walk33 true move
+		enemy_walking.walk22 = false #walk22 false attack player, walk22 true stop
+	#else:
+		#next_state = dead_state
+	#	enemy_walking.queue_free()
+	
 	#character_state_machine.current_state.can_move = true
 	#if enemy_walking.direction.x  && enemy_walking.state_machine.check_if_can_move():
 	#	enemy_walking.velocity.x = enemy_walking.direction.x * 20

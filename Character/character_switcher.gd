@@ -1,12 +1,24 @@
 extends Node
 
 @onready var player = $Player
-@onready var player_1 = $Player1 #evil
-@onready var player_2 = $Player2 #evil
-@onready var player_3 = $Player3 #evil
-@onready var player_1_2 = $Player1_2 #good
-@onready var player_2_2 = $Player2_2 #good
-@onready var player_3_2 = $Player3_2 #good
+@onready var player_1 = $Player1 #bioevil - from Mana points
+@onready var player_2 = $Player2 #chemevil - from Optimization/Intelligence (cooldown decrease & cost reduction)
+@onready var player_3 = $Player3 #phyevil - from Attack
+@onready var player_1_2 = $Player1_2 #biogood - from Speed
+@onready var player_2_2 = $Player2_2 #chemgood - from Health points
+@onready var player_3_2 = $Player3_2 #phygood - from Defense 
+
+#Baby:
+#base, nothing
+#bio , X - long legs (highlighted)
+#chem, X - syringe ability puzzle only
+#phy, X - grab metal (not levitate them)
+#Kid:
+#base, Z - normal punch
+#bio, Z- punch/tail meelee attack, X - long legs climb wall (highlighted)
+#chem, Z - syringe attack, X - syringe ability puzzle only
+#phy, Z - metal/electric punch, X - generate electricity puzzle only
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,7 +41,7 @@ func _ready():
 		
 		GameManager.bio_good1 = true
 		GameManager.chem_good2 = true
-		GameManager.phy_good3 = false
+		GameManager.phy_good3 = true
 		
 		#P2.global_position = Pos1
 		#switch_timer.start()
@@ -43,11 +55,28 @@ var can_switch1 = true
 var Pos1
 @onready var switch_timer = $Switch_Timer
 var active_switch = true
-
+@export var position = Vector2(0,0)
+var play = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
+	#print(position)
 	#print(GameManager.skill_switch_state)
+	if play == 0:
+		position = player.position
+	elif play == 1:
+		position = player_1.position
+	elif play == 2:
+		position = player_1_2.position
+	elif play == 3:
+		position = player_2.position
+	elif play == 4:
+		position = player_2_2.position
+	elif play == 5:
+		position = player_3.position
+	elif play == 6:
+		position = player_3_2.position
+
+		
 	if (Input.is_action_pressed("switchl")) && can_switch1 == true:
 		#if GameManager.key_item1 == false
 		can_switch1 = false
@@ -269,6 +298,8 @@ func _process(delta):
 		#print(playerg.get_name())
 		#if playerg.get_name() == "Player":
 		#	print("player is here")
+		play = 0
+		position = player.position
 	if (Input.is_action_pressed("switchc") && GameManager.skill_switch_state == 2 && active_switch == true && Global.talking == false && GameManager.bio_good1 == false) :
 		
 		active_switch = false
@@ -304,7 +335,9 @@ func _process(delta):
 			self.remove_child(player_3_2)
 			self.add_child(player_1)
 			player_1.global_position = Pos1
-			
+		
+		play = 1
+		position = player_1.position
 	elif (Input.is_action_pressed("switchc") && GameManager.skill_switch_state == 2 && active_switch == true && Global.talking == false && GameManager.bio_good1 == true) :
 		
 		active_switch = false
@@ -344,7 +377,8 @@ func _process(delta):
 			self.remove_child(player_3_2)
 			self.add_child(player_1_2)
 			player_1_2.global_position = Pos1
-			
+		play = 2
+		position = player_1_2.position
 	if (Input.is_action_pressed("switchc") && GameManager.skill_switch_state == 3 && active_switch == true && Global.talking == false && GameManager.chem_good2 == false) :
 		
 		active_switch = false
@@ -380,7 +414,8 @@ func _process(delta):
 			self.remove_child(player_3_2)
 			self.add_child(player_2)
 			player_2.global_position = Pos1
-	
+		play = 3
+		position = player_2.position
 	elif (Input.is_action_pressed("switchc") && GameManager.skill_switch_state == 3 && active_switch == true && Global.talking == false && GameManager.chem_good2 == true) :
 		
 		active_switch = false
@@ -416,7 +451,8 @@ func _process(delta):
 			self.remove_child(player_3_2)
 			self.add_child(player_2_2)
 			player_2_2.global_position = Pos1
-			
+		play = 4
+		position = player_2_2.position
 	if (Input.is_action_pressed("switchc") && GameManager.skill_switch_state == 4  && active_switch == true && Global.talking == false && GameManager.phy_good3 == false) :
 		active_switch = false
 		switch_timer.start()
@@ -451,7 +487,8 @@ func _process(delta):
 			player_3.global_position = Pos1
 		elif (has_node ("Player3_2")):
 			print("error")
-	
+		play = 5
+		position = player_3.position
 	elif (Input.is_action_pressed("switchc") && GameManager.skill_switch_state == 4  && active_switch == true && Global.talking == false && GameManager.phy_good3 == true) :
 		active_switch = false
 		switch_timer.start()
@@ -486,6 +523,10 @@ func _process(delta):
 			player_3_2.global_position = Pos1
 		elif (has_node ("Player3_2")):
 			print("there4")
+			
+		play = 6
+		position = player_3_2.position
+	
 			
 func _on_timer_timeout():
 	can_switch1 = true

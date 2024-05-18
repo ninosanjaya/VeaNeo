@@ -1,0 +1,68 @@
+[gd_scene load_steps=12 format=3 uid="uid://dgjig1ohqfyad"]
+
+[ext_resource type="Script" path="res://Objects/single_object_particle.gd" id="1_4ep6c"]
+[ext_resource type="Texture2D" uid="uid://cq6nj7l8krpuf" path="res://Objects/water_particle.png" id="2_lhkfx"]
+[ext_resource type="Texture2D" uid="uid://d4f4frwnykq4i" path="res://Objects/particle.png" id="3_f655i"]
+
+[sub_resource type="Gradient" id="Gradient_mgcxb"]
+offsets = PackedFloat32Array(0, 0.188442, 0.5201, 0.856784, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.88463, 0.616648, 0.22971, 1, 0.754161, 0.086719, 0.253127, 1, 0.0850137, 0.000307481, 0.000346826, 1, 0.0862745, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sed7u"]
+gradient = SubResource("Gradient_mgcxb")
+
+[sub_resource type="Curve" id="Curve_51gb6"]
+max_value = 100.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.546948, 1.6904), 10.711, 10.711, 0, 0, Vector2(0.78169, 93.6388), 0.0, 0.0, 0, 0, Vector2(1, 84.3861), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_iobu0"]
+curve = SubResource("Curve_51gb6")
+
+[sub_resource type="Curve" id="Curve_14ib4"]
+min_value = -200.0
+max_value = 500.0
+_data = [Vector2(0, 415.385), 0.0, 160.092, 0, 0, Vector2(0.0619835, 453.846), 0.0, 0.0, 0, 0, Vector2(0.136364, -192.308), 0.0, 0.0, 0, 0, Vector2(1, -169.231), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_t4mqh"]
+texture_mode = 1
+curve = SubResource("Curve_14ib4")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_08wm0"]
+particle_flag_disable_z = true
+spread = 5.0
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+orbit_velocity_min = 0.01
+orbit_velocity_max = 0.1
+gravity = Vector3(100, 0, 0)
+linear_accel_curve = SubResource("CurveTexture_t4mqh")
+radial_accel_min = 1.0
+radial_accel_max = 10.0
+damping_curve = SubResource("CurveTexture_iobu0")
+attractor_interaction_enabled = false
+scale_min = 0.05
+scale_max = 0.2
+color_ramp = SubResource("GradientTexture1D_sed7u")
+
+[sub_resource type="Environment" id="Environment_b5e22"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 1.0
+glow_strength = 1.1
+glow_blend_mode = 0
+
+[node name="Single_object_particle" type="Node2D"]
+script = ExtResource("1_4ep6c")
+tex = ExtResource("2_lhkfx")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = 1000
+z_as_relative = false
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_08wm0")
+texture = ExtResource("3_f655i")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="GPUParticles2D"]
+environment = SubResource("Environment_b5e22")

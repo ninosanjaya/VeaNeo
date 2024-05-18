@@ -69,7 +69,7 @@ var cutscene : bool = false
 #@export var idle_animation : String = "idle"
 #@export var nomove : bool = false
 @onready var fuwawa = $fuwawa
-
+@export var motion : Vector2
 
 func _ready():
 	animation_tree.active = true
@@ -138,6 +138,10 @@ func _physics_process(delta):
 	update_facing_direction()
 	death()
 	
+	motion.y += gravity
+	motion.y = clamp(motion.y, -450,450)
+	#motion = move_and_slide(motion)
+
 
 	
 	# Add the gravity.
@@ -249,7 +253,7 @@ func death():
 	
 func handle_attack():
 	
-	if (Input.is_action_pressed("attack")) and (can_attack == true) and (GameManager.attack_set_state == true) and (Global.talking == false) && Global.dog == false:
+	if (Input.is_action_pressed("attack")) and (can_attack == true) and  (Global.talking == false) :
 		state_machine.current_state = attack_state
 		playback.travel(attack_animation)
 		attack_timer_pp.start()
@@ -259,10 +263,10 @@ func handle_attack():
 		elif right == false:
 			position.x -= 5
 		
-	if (Input.is_action_pressed("skill"))  and (GameManager.attack_set_state == true) and (Global.talking == false) && Global.dog == false:
-		state_machine.current_state = defense_state
-		playback.travel(defense_animation)
-		defense_timer.start()
+	#if (Input.is_action_pressed("skill"))  and (GameManager.attack_set_state == true) and (Global.talking == false) && Global.dog == false:
+	#	state_machine.current_state = defense_state
+	#	playback.travel(defense_animation)
+	#	defense_timer.start()
 		#attack_timer_pp.start()
 		#can_attack = false
 		

@@ -1,0 +1,79 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://dxw3lscex3fot"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_q4m2i"]
+
+[resource]
+script = ExtResource("1_q4m2i")
+starts = {
+"Start": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(280, 156),
+"start_id": "Start"
+},
+"1_1": {
+"dialogue": "Testing 1,2,3",
+"offset": Vector2(560, 60),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 275),
+"speaker": 0
+},
+"1_2": {
+"dialogue": "Time to choose
+Just demo, in real game, use another button control & sprite
+So don't use the one from plugins",
+"offset": Vector2(940, -20),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": "Good"
+},
+1: {
+"condition": {},
+"link": &"1_4",
+"text": "Evil"
+}
+},
+"size": Vector2(300, 308),
+"speaker": 1
+},
+"1_3": {
+"dialogue": "Good one",
+"offset": Vector2(1391.5, -85),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 242),
+"speaker": 0
+},
+"1_4": {
+"dialogue": "Evil one",
+"offset": Vector2(1333.2, 213.1),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 242),
+"speaker": 1
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = "res://examples/Characters.tres"

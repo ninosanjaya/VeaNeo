@@ -75,14 +75,36 @@ var can_skill : bool = true
 
 #VEA NEO:
 var control_metal = false
+var cam = false
+var Xray = false
+var right_global = false
 
 
 #scenes
 var next_scene = ""
+var once = false
 
 func _ready():
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
+	
+func _process(delta):
+	
+	if Xray == true && once == false:
+		once = true
+		var timer : Timer = Timer.new()
+		add_child(timer)
+		timer.one_shot = true
+		timer.autostart = false
+		timer.wait_time = 10.0
+		timer.start()
+		timer.timeout.connect(_timer_timeout)
+		
+func _timer_timeout():
+	once = false
+	Xray = false
+	
+	
 	
 func goto_scene(path):
 	# This function will usually be called from a signal callback,

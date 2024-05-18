@@ -120,7 +120,6 @@ collide_with_areas = true
 stream = ExtResource("4_1lyrm")
 volume_db = -50.0
 max_distance = 700.0
-bus = &"SFX"
 
 [connection signal="throw_item" from="." to="." method="_on_throw_item"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

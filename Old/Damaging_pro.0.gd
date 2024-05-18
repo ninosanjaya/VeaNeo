@@ -19,11 +19,11 @@ func _on_body_entered(body):
 			var direction_sign = sign(direction_to_damageable.x)
 			print_debug(body.name + " took "+ str(damage) + ".")
 			if (direction_sign > 0):
-				child.hit(damage, Vector2.RIGHT)
+				child.hit(damage, Vector2.RIGHT, 1)
 			elif (direction_sign < 0):
-				child.hit(damage, Vector2.LEFT)
+				child.hit(damage, Vector2.LEFT, 1)
 			else:
-				child.hit(damage, Vector2.ZERO)
+				child.hit(damage, Vector2.ZERO, 1)
 #			GameManager.health_player_one -= 1
 			
 			#child.hit(damage)

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Old/gameover.gd" id="1_bajha"]
 [ext_resource type="Texture2D" uid="uid://cdbkqx8qa1ood" path="res://cutscene/gameover.png" id="1_mnavh"]
-[ext_resource type="FontFile" uid="uid://06djxm4iqomb" path="res://Old/PixelGameFont.ttf" id="2_a2dck"]
+[ext_resource type="FontFile" uid="uid://06djxm4iqomb" path="res://UIs/PixelGameFont.ttf" id="2_a2dck"]
 [ext_resource type="AudioStream" uid="uid://b4fjvmhcjvlv8" path="res://bgm/fuwamoco_hit.wav" id="4_iwiy2"]
 
 [sub_resource type="Theme" id="Theme_830ix"]
@@ -74,7 +74,6 @@ text = "No"
 stream = ExtResource("4_iwiy2")
 volume_db = -50.0
 autoplay = true
-bus = &"SFX"
 
 [connection signal="pressed" from="VBoxContainer/Yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="VBoxContainer/No" to="." method="_on_no_pressed"]

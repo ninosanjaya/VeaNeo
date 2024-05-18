@@ -1,0 +1,108 @@
+[gd_scene load_steps=9 format=3 uid="uid://da2b6xho3d8p3"]
+
+[ext_resource type="Script" path="res://Objects/Black_hole.gd" id="1_giofj"]
+[ext_resource type="Texture2D" uid="uid://cs5wt500f8svo" path="res://Old/Sprite_characters_objects_total_sprite_sheet.png" id="2_383bn"]
+[ext_resource type="Script" path="res://Objects/Damaging_pro_black_hole.gd" id="3_km7sx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fwj5"]
+size = Vector2(16, 6)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_usqby"]
+radius = 64.0078
+
+[sub_resource type="Animation" id="Animation_fs51l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_ocxej"]
+resource_name = "bomb"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_383bn")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yfdtf"]
+_data = {
+"RESET": SubResource("Animation_fs51l"),
+"bomb": SubResource("Animation_ocxej")
+}
+
+[node name="Black_hole" type="CharacterBody2D"]
+script = ExtResource("1_giofj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("2_383bn")
+hframes = 7
+vframes = 3
+frame = 4
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1fwj5")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="BOMB_Timer" type="Timer" parent="Timer"]
+wait_time = 0.5
+one_shot = true
+
+[node name="Damaging_pro" type="Area2D" parent="."]
+script = ExtResource("3_km7sx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damaging_pro"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_usqby")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yfdtf")
+}
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer/BOMB_Timer" to="." method="_on_bomb_timer_timeout"]
+[connection signal="body_entered" from="Damaging_pro" to="Damaging_pro" method="_on_body_entered"]

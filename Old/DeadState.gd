@@ -11,18 +11,23 @@ extends State
 #	playback.travel(dead_animation)
 
 func state_process(_delta):
-	
-	if GameManager.enemies_done == false:
-		playback.travel(dead_animation)
-		enemy_walking.direction.x = 0
-	if GameManager.enemies_done == true:
-		playback.travel(walk2_animation)
-		next_state = walk2_state
+	#enemy_walking.queue_free()
+	pass
+	#if GameManager.enemies_done == false:
+	#	playback.travel(dead_animation)
+	#	enemy_walking.direction.x = 0
+	#if GameManager.enemies_done == true:
+	#	playback.travel(walk2_animation)
+	#	next_state = walk2_state
 	
 func _on_animation_tree_animation_finished(_anim_name):
 	#damageable.health = 3
 	#enemy_walking.walk22 = true
 	
+	print("finished anim")
+	if (damageable.health <= 0):
+	#else:
+		enemy_walking.queue_free()
 	
 	enemy_walking.walk33 = false #walk33 true move
 	enemy_walking.walk22 = true #walk22 false attack player, walk22 true stop

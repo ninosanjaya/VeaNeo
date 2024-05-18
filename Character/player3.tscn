@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://c70d04eb52agg"]
+[gd_scene load_steps=91 format=3 uid="uid://c70d04eb52agg"]
 
 [ext_resource type="Script" path="res://Character/player3_evil.gd" id="1_pjvms"]
 [ext_resource type="Material" uid="uid://dpuhlrxcqb8yv" path="res://Old/whiten_material.tres" id="2_4fk3b"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://Character/Skill3_evil.gd" id="12_f1277"]
 [ext_resource type="Script" path="res://Character/Statedebug2.gd" id="13_d0g74"]
 [ext_resource type="Script" path="res://Character/Hit3_evil.gd" id="13_okdsw"]
+[ext_resource type="Script" path="res://Character/Damaging.gd" id="15_n3jbf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_70hdg"]
 size = Vector2(12, 28)
@@ -918,10 +919,13 @@ states/skill4_2/position = Vector2(284, -18)
 transitions = ["Start", "move", SubResource("AnimationNodeStateMachineTransition_3pkfy"), "move", "jump", SubResource("AnimationNodeStateMachineTransition_idqy0"), "jump", "move", SubResource("AnimationNodeStateMachineTransition_mu70g"), "move", "attack1", SubResource("AnimationNodeStateMachineTransition_k0slt"), "attack1", "attack2", SubResource("AnimationNodeStateMachineTransition_5wgme"), "attack2", "move", SubResource("AnimationNodeStateMachineTransition_p8r6r"), "attack1", "move", SubResource("AnimationNodeStateMachineTransition_hc4da"), "move", "dash", SubResource("AnimationNodeStateMachineTransition_xsnqi"), "jump", "dash", SubResource("AnimationNodeStateMachineTransition_jf65g"), "dash", "move", SubResource("AnimationNodeStateMachineTransition_xs2bl"), "move", "skill", SubResource("AnimationNodeStateMachineTransition_gvkb1"), "skill", "move", SubResource("AnimationNodeStateMachineTransition_alb4y"), "move", "interact", SubResource("AnimationNodeStateMachineTransition_gpw82"), "interact", "move", SubResource("AnimationNodeStateMachineTransition_1do6j"), "move", "skill2", SubResource("AnimationNodeStateMachineTransition_kjqee"), "skill2", "move", SubResource("AnimationNodeStateMachineTransition_dp4lh"), "move", "skill3", SubResource("AnimationNodeStateMachineTransition_s8g4t"), "skill3", "move", SubResource("AnimationNodeStateMachineTransition_lv6at"), "move", "skill4", SubResource("AnimationNodeStateMachineTransition_i6exe"), "skill4", "move", SubResource("AnimationNodeStateMachineTransition_t87rh"), "hit", "dead", SubResource("AnimationNodeStateMachineTransition_4pn5d"), "dead", "End", SubResource("AnimationNodeStateMachineTransition_wm8b3"), "move", "hit", SubResource("AnimationNodeStateMachineTransition_amxrk"), "hit", "move", SubResource("AnimationNodeStateMachineTransition_wny22"), "move", "attackv2", SubResource("AnimationNodeStateMachineTransition_7ecbc"), "attackv2", "move", SubResource("AnimationNodeStateMachineTransition_a4v4o"), "move", "dogidle", SubResource("AnimationNodeStateMachineTransition_ep6gc"), "dogidle", "move", SubResource("AnimationNodeStateMachineTransition_ehef1"), "move", "dogwalk", SubResource("AnimationNodeStateMachineTransition_s7vdv"), "dogwalk", "move", SubResource("AnimationNodeStateMachineTransition_tpmwm"), "dogwalk", "dogidle", SubResource("AnimationNodeStateMachineTransition_0264e"), "dogidle", "dogwalk", SubResource("AnimationNodeStateMachineTransition_qsbot"), "jump", "skill4_2", SubResource("AnimationNodeStateMachineTransition_sbc4o"), "skill4_2", "move", SubResource("AnimationNodeStateMachineTransition_l8ixn")]
 graph_offset = Vector2(-144, -51)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1sctq"]
+size = Vector2(53, 39)
+
 [node name="Player3" type="CharacterBody2D" node_paths=PackedStringArray("attack_state", "attackv2_state", "hit_state", "jump_state")]
 collision_mask = 3
 script = ExtResource("1_pjvms")
-SPEED = 300.0
+SPEED = 120
 attack_state = NodePath("CharacterStateMachine2/Attack2")
 attackv2_state = NodePath("CharacterStateMachine2/Attackv2")
 hit_state = NodePath("CharacterStateMachine2/Hit2")
@@ -1039,6 +1043,10 @@ air_state = NodePath("../Air2")
 wait_time = 0.9
 one_shot = true
 
+[node name="AtkTimerv0" type="Timer" parent="CharacterStateMachine2/Attackv2"]
+wait_time = 0.5
+one_shot = true
+
 [node name="Skill2" type="Node" parent="CharacterStateMachine2" node_paths=PackedStringArray("return_state", "ground_state")]
 script = ExtResource("12_f1277")
 return_state = NodePath("../Ground2")
@@ -1062,6 +1070,14 @@ offset_bottom = -34.0
 text = "State: "
 script = ExtResource("13_d0g74")
 
+[node name="Damaging" type="Area2D" parent="."]
+monitoring = false
+script = ExtResource("15_n3jbf")
+
+[node name="FacingCollisionShape2D" type="CollisionShape2D" parent="Damaging"]
+position = Vector2(1.5, -18.5)
+shape = SubResource("RectangleShape2D_1sctq")
+
 [connection signal="throw_item" from="." to="." method="_on_throw_item"]
 [connection signal="throw_item_Nerissa" from="." to="." method="_on_throw_item_nerissa"]
 [connection signal="timeout" from="reset" to="." method="_on_reset_timeout"]
@@ -1073,4 +1089,6 @@ script = ExtResource("13_d0g74")
 [connection signal="timeout" from="CharacterStateMachine2/Dash2/DashTimer2" to="CharacterStateMachine2/Dash2" method="_on_dash_timer_2_timeout"]
 [connection signal="timeout" from="CharacterStateMachine2/Dash2/DashTimer3" to="CharacterStateMachine2/Dash2" method="_on_dash_timer_3_timeout"]
 [connection signal="timeout" from="CharacterStateMachine2/Attackv2/AtkTimerv2" to="CharacterStateMachine2/Attackv2" method="_on_atk_timerv_2_timeout"]
+[connection signal="timeout" from="CharacterStateMachine2/Attackv2/AtkTimerv0" to="." method="_on_atk_timerv_0_timeout"]
 [connection signal="timeout" from="CharacterStateMachine2/Skill2/SkillTimer2" to="CharacterStateMachine2/Skill2" method="_on_skill_timer_2_timeout"]
+[connection signal="body_entered" from="Damaging" to="Damaging" method="_on_body_entered"]
